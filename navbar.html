@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{margin: 0;width: 100vw;height: 100vh;}
+
+    li{
+        list-style: none;
+        color:  white;
+        border: 2px solid red;
+        padding: 20px;
+        border-radius: 10px;
+        background-image: url(https://pablomonteserin.com/res/html5/ex/navbar/indiana.png),
+    linear-gradient(to bottom, #006e2e 0%, #f90000 100%);
+    }
+    li:hover{
+        scale: 1.1;
+        cursor: pointer;
+        background-position: center;
+        transition: 2s;
+    }
+    .div{
+        background-color: black;
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 10px;
+        user-select: none;
+    }
+    a{
+        color: inherit;
+        text-decoration: none;
+    }
+</style>
+<body>
+    <div class="div">
+        <ul></ul>
+            <a href=""><li>Home</li></a>
+            <a href=""><li>Fotos</li></a>
+            <a href=""><li>Videos</li></a>
+            <a href=""><li>Contacto</li></a>
+        </ul>
+    </div>
+</body>
+</html>
