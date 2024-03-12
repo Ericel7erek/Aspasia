@@ -17,9 +17,9 @@ console.log(typeof da)
 // console.log(TituloDeLaPelicula)
 
 let i = 7;
-i = 5;
-i = 3;
-console.log(i); // ¿Qué valor se mostrará por consola?
+// i = 5;
+// i = 3;
+// console.log(i); // ¿Qué valor se mostrará por consola?
 
 
 // let a = 5;
@@ -101,11 +101,11 @@ if (nota>5) {
     console.log("Suspenso");
 }
 
-if (i>=0) {
-    console.log("positive");
-} else {
-    console.log("negative");
-}
+// if (i>=0) {
+//     console.log("positive");
+// } else {
+//     console.log("negative");
+// }
 
 if (i%2 === 0) {
     console.log("es par");
@@ -127,3 +127,117 @@ if (i>=100) {
 } else {
     console.log("menor de 100");
 }
+
+const n1 = 3;
+
+const n2 = 7;
+
+const op = '+';
+
+if (op==="+") {
+    console.log(n1+n2);
+} else if (op==="-") {
+    console.log(n1-n2);
+}   else if (op==="/") {
+    console.log(n1/n2);
+}   else if (op==="*") {
+    console.log(n1*n2);
+}
+
+const a = 5;
+const b = 3;
+
+if(a>b){console.log('a es mayor que b');}
+else{console.log('b es mayor que a');}
+
+console.log(a>b ? 'a es mayor que b' : 'b es mayor que a');
+
+
+const index = 1
+console.log(index%2===0? "i es par":"i es impar");
+
+const color = 'amarillo';
+switch(color) {
+	case 'rojo':
+		console.log('Has escogido rojo');
+	break;
+	case 'azul':
+		console.log('Has escogido azul');
+	break;
+	case 'amarillo':
+		console.log('Has escogido amarillo');
+	break;
+	//Inserta tu código aquí
+	default:
+		console.log('No has escogido ningún color de la lista!');
+}
+
+const golosina = 'nubes';
+
+switch(golosina) {
+	case 'chicle':
+		console.log('Has escogido un chicle');
+	break;
+	case 'gominola':
+		console.log('Has escogido una gominola');
+	break;
+	case 'regaliz':
+		console.log('Has escogido un regaliz');
+	break;
+		//Inserta tu código aquí
+        default:
+            console.log("no has escogido ningun color de la lista!");
+}
+
+console.log(false || 'false');
+console.log(typeof (false || 'false')); // string
+
+console.log(true && 'false');
+console.log(typeof (true && 'false'));
+
+for (let i = 0; i <=100; i+= 2) {
+    console.log(i);
+}
+for (let i = 0; i < 5; i++) {
+    if (i > 2 && i < 4) {
+        break;
+    }
+    console.log(i); // 0 1 2
+}
+
+
+for (let i = 0; i <=100; i++) {
+    if (i%2===0) {
+        console.log(i);
+    }
+}
+
+for (let i = 1; i <=20; i++) {
+    if (i%3===0 && i%5===0) {
+        console.log("FizzBuzz");
+    }
+    else if (i%3===0) {
+        console.log("Fizz");
+    }
+    else if (i%5===0) {
+        console.log("Buzz");
+    }
+        console.log(i);
+}
+// let sum = 0
+// for (let index = 5; index >= 0 ; index--) {
+//     sum += index;
+// }
+// console.log(sum);
+
+for (let index = 0; index <=10; index++) {
+    console.log("7* "+ index + " = "+ index*7);
+    
+}
+
+for (let i = 1; i <=10; i++) {
+    for (let j = 1; j <=10; j++) {
+        console.log( i + " * " +j + " = "+ i*j);
+    }
+}
+
