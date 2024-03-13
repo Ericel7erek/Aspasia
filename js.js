@@ -149,22 +149,112 @@ function testSize(num) {
 	if (num < 5) {
         return "Tiny";
     } else if(num < 10){
-        return "Small";}
-     else if(num < 15)
-    {return "Medium";}
-     else if(num < 20){
-        return "Large";}
-     else if(num >= 20){
-        return "Huge";}
+        return "Small";
+    } else if(num < 15)
+    {
+        return "Medium";
+    } else if(num < 20){
+        return "Large";
+    } else if(num >= 20){
+        return "Huge";
+    }
 }
 
 const xx = testSize(3)
 console.log(xx);
 
-function nand(bool1, bool2) {
+function nor(bool1, bool2) {
     return !(bool1&&bool2)
 }
 
-console.log(nand(true, false));
-console.log(nand(false, true));
-console.log(nand(false, false));
+
+function nand(bool11, bool22) {
+    return !bool11 && !bool22
+}
+const v1 = nor(false, false);
+const v2 = nor(true, false);
+const v3 = nor(false, true);
+const v4 = nor(true, true);
+
+
+console.log(v1);
+console.log(v2);
+console.log(v3);
+console.log(v4);
+
+function nonIgual(a, b) {
+    return a ==!b
+}
+const v5 = nonIgual(true, false);
+const v6 = nonIgual(false, true);
+const v7 = nonIgual(true, true);
+const v8 = nonIgual(false, false);
+
+console.log(v5);
+console.log(v6);
+console.log(v7);
+console.log(v8);
+
+let user = {
+name: ["Pablo", "Eric", "Richard"],
+age: [11 , 12, 14]
+};
+
+
+console.log(user);
+
+user = null;
+
+let users = {
+	name: 'eric',
+	apellido: 'alaa',
+	funciones: {
+		programador: 'Sr',
+		exp: '12 years'
+	}
+}
+
+console.log(users)
+
+function infinity(a) {
+    return a/0
+}
+console.log(infinity(1))
+
+const num = numero=> numero**3
+
+console.log(num(3));
+
+const mH = kilo=> kilo*1000;
+console.log(mH(1));
+
+const area = (width, height)=> width*height;
+
+console.log(area(2,2));
+
+const triAngulo= (base, altura)=> base*altura/2
+
+console.log(triAngulo(13, 2));
+
+const perimetro = radius => 2*Math.PI*radius
+console.log(perimetro(1));
+const circle = radius => Math.PI*radius*radius
+console.log(circle(3));
+
+const multiply = (m,n)=> m*n
+console.log(multiply(4,2));
+
+const nombre = "Ramona";
+console.log("Las letras que van desde la tercera hasta la última posición son: " + nombre.substring(1,3)); //am
+console.log("Las letras que van desde la tercera hasta la última posición son: " + nombre.substring(2)); //mona
+console.log("Las letras que van desde la tercera hasta la última posición son: " + nombre.slice(1,3)); //am
+console.log("Las letras que van desde la tercera hasta la última posición son: " + nombre.slice(2)); //mona
+console.log("Las dos últimas letras: " + nombre.slice(-2)); //na
+console.log("La palabra tiene " + nombre.length + " letras"); // 6
+console.log("La palabra en mayúsculas es: " + nombre.toUpperCase()); // RAMONA
+console.log("La palabra en minúsculas es: " + nombre.toLowerCase()); // ramona
+console.log("¿La palabra contiene la letra a?: " + nombre.includes("a")); // true
+console.log("La posición de la primera 'a' de la palabra es: " + nombre.indexOf("a")); // 1 Si la letra no estuviese presente, devolvería -1
+console.log("La posición de la última 'a' de la palabra es: "  + nombre.lastIndexOf("a")); // 5
+console.log("La primera letra de la palabra es: " + nombre.charAt(0)); // R
+console.log("La primera letra de la palabra es: " + nombre[0]); // R

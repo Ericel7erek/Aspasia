@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        cursor: url(./cursor.cur), auto;
+    }
+    @font-face {
+        font-family: flechita;
+        src: url(./Arrows_tfb.ttf);
+    }
+    .container{
+        display: flex;
+        margin-top: 10px;
+        width: 100%;
+        
+    }
+    .menu li {
+        display: block;
+        position: relative;
+    }
+    a{
+        display: block;
+        background-color: pink;
+        list-style: none;
+        border: 3px solid black;
+        border-radius: 7px;
+        padding: 20px;
+        text-decoration: none;
+        color: black;
+}
+
+    a:hover{
+        background-color: salmon;
+        transition: 1s;
+    }
+    .menu li.hasChildren a:after{
+    font-family: flechita;
+	color:purple;
+	content:" o";
+}
+li{
+    list-style: none;
+}
+.menu .hasChildren ul{
+	position:absolute;
+    padding: 0;
+    opacity: 0;
+	overflow: hidden;
+	max-height: 0;
+	opacity: 0;
+	overflow: hidden;
+	max-height: 0;
+	transition: 1s;
+    left: 100%;
+    top: 0%;
+}
+.menu .hasChildren li{
+	display:block;
+}
+.menu li.hasChildren:hover ul{
+    opacity: 1;
+    max-height: 800px;
+    transition: 2s;
+}
+.hasChildren li a{
+    padding: 11px;
+    margin-left: 3px;
+}
+</style>
+<body>
+    <div class="container">
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li class="hasChildren"><a href="#" title="las fotos de mis viajes">Fotos</a>
+                    <ul>
+                        <li><a href="#">submenu 1</a></li>
+                        <li><a href="#">submenu 2</a></li>
+                        <li><a href="#">submenu 3</a></li>
+                    </ul>
+                </li>
+            </li>
+            <li><a href="#">Videos</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+</body>
+</html>
