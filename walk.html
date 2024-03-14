@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box{
+        height: 150px;
+        width: 90px;
+        background-image: url(https://pablomonteserin.com/res/html5/ex/animations/keyframes/animation-step/monkey-guybrush.png);
+        background-repeat: no-repeat;
+        animation: gbwalk 1s steps(6) infinite;
+        background-position: -500px;
+    }
+@keyframes gbwalk {
+    from{
+        background-position: 0px;
+    }
+    to{
+        background-position: -644px;
+    }
+}
+</style>
+<body>
+    <div id="box"></div>
+</body>
+</html>

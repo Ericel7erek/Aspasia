@@ -258,3 +258,114 @@ console.log("La posición de la primera 'a' de la palabra es: " + nombre.indexOf
 console.log("La posición de la última 'a' de la palabra es: "  + nombre.lastIndexOf("a")); // 5
 console.log("La primera letra de la palabra es: " + nombre.charAt(0)); // R
 console.log("La primera letra de la palabra es: " + nombre[0]); // R
+
+
+const longitud = nom =>{
+    return nom.length
+}
+console.log(longitud("Hola"));
+
+const devuelvePrimeraLetra = a => {return a.substring(0,1)}
+console.log(devuelvePrimeraLetra("dadadad"));
+
+const wonderful = a => {return a.substring(3,7)}
+console.log(wonderful("Wonderful Days."));
+
+const devuelveUltimaLetra= ult => {return ult.slice(-1)}
+console.log(devuelveUltimaLetra("dadadad"));
+
+const devuelveMasLarga = (txt1,txt2) =>  {return txt1.length >= txt2.length ? txt1: txt2}
+
+console.log(devuelveMasLarga("Richard","Eric"));
+
+const devuelveMasLarga2 = (tx1,tx2,tx3) => {
+    const t1 = tx1.length
+    const t2 = tx2.length
+    const t3 = tx3.length
+    if (t1 > t2 && t1 > t3) {
+        return tx1
+    } else if(t2>t1 && t2>t3){
+        return tx2
+    } else if(t3>t1 && t3>t2){
+        return tx3
+    } else{
+        return "at least 2 are of the same length"
+    }
+}
+console.log(devuelveMasLarga2("Richard","Eric","Juan"));
+
+const generarNombre = (t1,t2,t3) => {
+    if (t1.length< 5|| t2.length< 5 ||t3.length< 5) {
+        return "error"
+    } else {
+        return t1.substring(0,3) + t2.substring(0,3) + t3.substring(0,3)
+    }
+}
+
+
+console.log(generarNombre("Richard", "Erics", "David"));
+
+const generarNombre2 = (t1,t2,t3) => {
+    if (t1.length< 5|| t2.length< 5 ||t3.length< 5) {
+        return "error"
+    } else {
+        return t1.slice(-1) + t2.slice(-1) + t3.slice(-1)
+    }
+}
+
+console.log(generarNombre2("Richard", "Erics", "David"));
+
+
+const generarNombre3 = (t1,t2,t3) => {
+    if (t1.length< 5|| t2.length< 5 ||t3.length< 5) {
+        return "error"
+    } else {
+        return t1.slice(-3) + t2.slice(-3) + t3.slice(-3)
+    }
+}
+console.log(generarNombre3("Richard", "Erics", "David"));
+
+const tieneLetra = (txt, letra) => txt.indexOf(letra)>=0
+
+console.log(tieneLetra("darb",""));
+
+const tieneLetra2 = (txt, letra) => txt.toUpperCase().indexOf(letra.toUpperCase())>=0
+
+console.log(tieneLetra2("darb","A"));
+
+const crearPalabra = (l,n) => l.repeat(n)
+
+console.log(crearPalabra("a",12));
+
+const crearPalabra2 = (l,n) => l.toUpperCase().repeat(n)
+
+console.log(crearPalabra2("a",12));
+
+const toCase = (l) =>l.toLowerCase()+ "-" +l.toUpperCase()
+
+console.log(toCase("adada"));
+
+const shortcut = (l,l2) => l[0]+l2[0]
+
+console.log(shortcut("Darwin", "America"));
+
+const addGuiones = (txt1) =>txt1.slice(0,1) + "bar"
+
+console.log((addGuiones("adada")));
+
+const MAX = 10
+const MIN = 9
+const n = Math.floor(Math.random() * (7 - 5 + 1)) + 5;
+console.log(n);
+
+const name= "Mercadona";
+const nom= Math.floor(Math.random()*name.length)
+console.log(name[nom]);
+
+let numero1 = Number(prompt("primero numero"))
+let numero2 = Number(prompt("segundo numero"))
+let operador = prompt("Operador")
+let igual = (numero1,numero2,operador)=>{
+    numero1 + operador +numero2
+}
+alert(igual)

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .border{
+        border: 1px solid black;
+        height: 50px;
+    }
+    .barrita{
+        height: 100%;
+        background-color: green;
+        width: 80%;
+        animation: muevete 1s forwards;
+    }   
+    @keyframes muevete {
+        from{width: 0;}
+    }
+    .barrita2{
+        height: 100%;
+        width: 80%;
+        background-image: url(./corazon-mask.png);
+        background-color: red;
+        background-size: auto 100%;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Animación de barrita de habilidades con CSS</h1>
+        <div class="border">
+            <div class="barrita"></div>
+        </div>
+        <div class="otra">
+            <h1>Animación usando CSS de barrita de habilidad con imágen de fondo</h1>
+            <div class="border">
+                <div class="barrita2"></div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
