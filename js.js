@@ -353,19 +353,161 @@ const addGuiones = (txt1) =>txt1.slice(0,1) + "bar"
 
 console.log((addGuiones("adada")));
 
-const MAX = 10
-const MIN = 9
-const n = Math.floor(Math.random() * (7 - 5 + 1)) + 5;
-console.log(n);
+// const MAX = 10
+// const MIN = 9
+// const n = Math.floor(Math.random() * (7 - 5 + 1)) + 5;
+// console.log(n);
 
 const name= "Mercadona";
 const nom= Math.floor(Math.random()*name.length)
 console.log(name[nom]);
 
-let numero1 = Number(prompt("primero numero"))
-let numero2 = Number(prompt("segundo numero"))
-let operador = prompt("Operador")
-let igual = (numero1,numero2,operador)=>{
-    numero1 + operador +numero2
+let n1 = Number(prompt("primero numero"))
+let n2 = Number(prompt("segundo numero"))
+let op = prompt("Operador")
+
+
+if(op === '+'){
+    igual = n1 + n2
+} else if(op === '-'){
+    igual = n1 - n2
+} else if(op === '*'){
+    igual = n1 * n2
+}else if(op === '/'){
+    igual = n1 / n2
 }
+
 alert(igual)
+
+
+
+const aleatorio = Math.floor(Math.random()*5)+1
+alert(aleatorio)
+
+const userNum = Number(prompt("enter a number por favor"))
+
+if (userNum===aleatorio) {
+    alert("son iguales")
+} else {
+    alert("Son diferentes")
+}
+
+const usuarioDni = Number(prompt("Introduce el DNI, Sin la letra"))
+alert(usuarioDni)
+if(usuarioDni.toString().length===8 && !isNaN(usuarioDni)){
+    const resto = usuarioDni%23;
+    const letras ='TRWAGMYFPDXBNJZSQVHLCKE';
+    const letra = letras.charAt(resto)
+    console.log(letra)
+} else {
+    throw console.error("Numero falso de DNI");
+}
+
+const n = Number(prompt("Introduzca el numero de noches que estara fuera"))
+const destino = prompt("Introduzca el destino de tu viaje")
+const costeHotel = noches => noches *140
+const costeAvion = (ciudad, n) => {
+    let coste;
+    if (ciudad==="Oviedo") {
+        coste=15
+    }
+    else if (ciudad==="Tokyo") {
+        coste=700
+    }
+    else if (ciudad==="Madrid") {
+        coste=90
+    }
+    else if (ciudad==="Barcelona") {
+        coste=90
+    } if (n>=3){
+        coste*=0.9
+    }
+    return coste
+}
+
+const costeAlquilerCoche= n =>{
+    let coste = n* 40;
+    if(n>= 3){
+        coste= coste-20
+    }
+    else if(n>= 7){
+        coste= coste-50
+    }
+    return coste;
+}
+const resultado1 = Number(costeHotel(n));
+const resultado2 = Number(costeAvion(destino, n));
+const resultado3 = Number(costeAlquilerCoche(n));
+console.log("Coste hotel: " + resultado1);
+console.log("Coste viaje: ", resultado2);
+console.log("Coste alquiler coche: ", resultado3);
+console.log("Total:", resultado1 + resultado2 + resultado3);  
+
+let nu = Math.floor(Math.random()*2)+1
+let otherNumber = nu===1?2:1;
+alert(nu)
+let userdoor= parseInt(prompt("Entras en una mazmorra con dos puertas. La puerta 1 y la puerta 2. Tras una de las dos puertas, se encuentra una muerte segura. ¿Qué puerta escoges? 1/2"))
+switch (userdoor) {
+    case nu:
+        alert("Has escogido sabiamente")
+        break;
+    case otherNumber:
+        alert("Mala suerta. Un dragón te come")
+            break;
+    default:
+        alert("nope")
+        break;
+}
+
+
+let isRight = false;
+const hasNumber = (myString) => /\d/.test(myString);
+while(!isRight){
+    const nombreDeUsuario= prompt("Introduzca tu nombre, o te pegare")
+    if(!hasNumber(nombreDeUsuario)){
+    const real = prompt('El nombre introducido no tiene ningún número. ¿Es su nombre real? Yes / No');
+    if(real==="Yes"){
+    isRight=true
+    alert('Seguimos con el proceso de registro');
+} else{
+    alert('Como ese no es su nombre real, debe volver a realizar el proceso de registro');
+} }else {
+    alert('El nombre introducido tiene números. Debe volver a introducir su nombre');
+    
+}
+}
+
+const base = 2;
+const exponente = 5;
+let r= 1;
+let i= 0;
+for (let index = 0; index < exponente; index++) {
+    r= r * base;
+}
+console.log(r)
+
+for (let index = exponente; index > 0; index--) {
+    r= r * base;
+}
+console.log(r)
+
+while (i< exponente) {
+    r=r* base;
+    i++;
+}
+console.log(r)
+i= exponente
+while (i> 0) {
+    r=r* base;
+    i--;
+}
+console.log(r)
+
+let dato = Number(prompt("factorial"))
+let rr = 1;
+
+for (let index = dato; index > 0 ; index--) {
+    rr *= index
+}
+
+alert(rr)
