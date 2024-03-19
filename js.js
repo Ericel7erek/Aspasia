@@ -509,5 +509,86 @@ let rr = 1;
 for (let index = dato; index > 0 ; index--) {
     rr *= index
 }
-
 alert(rr)
+
+const array= ["Juan", "Roberto", "Eric", "Richard", "Algo"]
+
+for (let index = 0; index < array.length; index++) {
+    console.log("Conozco a alguien llamado "+ array[index]);
+    
+}
+
+const toArray=(n, m)=> {
+    const array1=[]
+    array1.push(n,m)
+    return array1
+}
+toArray(1,2)
+
+const numbers = [1,9,3,8,5,7]
+for (let index = 0; index < numbers.length; index++) {
+    console.log(numbers[index]*2); 
+    
+}
+
+const getFirstElement = (arr) => arr[0]
+const v = getFirstElement([1, 2, 3, 4, 5]);
+console.log(v); // 1
+
+const setFirstElement = (arr,n) => {arr[0]=n; return arr}
+const s = setFirstElement([1, 2, 3], 4);
+console.log(s);// [4, 2, 3]
+
+const getLastElement = (arr) => {return arr[arr.length-1]}
+const f = getLastElement([1, 2, 3]);
+console.log(f); // 3
+
+const numbers1 = [1, 9, -3, 8, -5, 0, 3, 4, 6, -7];
+
+let positiveValues = 0;
+let negativeValues = 0;
+let zeroValues = 0;
+
+for (let i = 0; i < numbers1.length; i++) {
+    if (numbers1[i]>0) {
+        positiveValues++
+    }else if (numbers1[i]<0) {
+        negativeValues++
+    }else {
+        zeroValues++
+    }
+}
+
+console.log(positiveValues);
+console.log(negativeValues);
+console.log(zeroValues);
+
+const number = [1, 9, -3, 8, -5, 0, 3, 4, 6, -7];
+
+let positiveSum = 0;
+let positiveCount = 0;
+
+let negativeSum = 0;
+let negativeCount = 0;
+for (let i = 0; i < number.length; i++) {
+    if (number[i]>0) {
+        positiveSum += number[i]
+        positiveCount++
+    }
+    else if (number[i]<0) {
+        negativeSum += number[i]
+        negativeCount++
+    }
+}
+console.log('La media de los positivos es: ' + positiveSum / positiveCount);
+
+console.log('La media de los negativos es: ' + negativeSum / negativeCount);
+
+const arr = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+  [[10, 11, 12], 13, 14]
+];
+const myData = arr[1][3]; // Modificar únicamente esta línea para acceder al 8 del array bidimensional
+console.log(myData);
