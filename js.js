@@ -585,10 +585,10 @@ console.log('La media de los positivos es: ' + positiveSum / positiveCount);
 console.log('La media de los negativos es: ' + negativeSum / negativeCount);
 
 const arr = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
-  [[10, 11, 12], 13, 14]
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [[10, 11, 12], 13, 14]
 ];
 const myData = arr[1][3]; // Modificar únicamente esta línea para acceder al 8 del array bidimensional
 console.log(myData);
