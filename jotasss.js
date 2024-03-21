@@ -91,3 +91,15 @@ while (!haGanadoAlguien) {
         printBoard()
     }
 }
+
+let secretWord = ["E","R","I","C"]
+let input = prompt("Enter a list of items separated by commas:");
+let array = input.split("","");
+
+for (let i = 0; i < secretWord.length; i++) {
+    if (secretWord===array) {
+        console.log("true");
+    } else {
+        console.log("false");
+    }
+}
