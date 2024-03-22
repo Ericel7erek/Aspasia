@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        label{
+        width: 120px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    fieldset{
+	padding:0px; /*no poner padding a los fieldset por problemas de compatibilidad con IE*/
+	border: solid black 1px;/*Habrá que especificar explícitamente el borde del fieldset para que haya compatibilidad con IE*/
+}
+div{
+    width: 150px;
+}
+</style>
+<body>
+<h1>bla bla bla</h1>
+<input type="number" id="num1">
+<input type="number" id="num2">
+<p>Resultado <output name="result" id="result"></output></p>
+<p><button onclick="calculation()">Calcular</button></p>
+<script>
+    	function calculation() {
+                var o = document.getElementById("result");
+                var num1 = document.getElementById("num1");
+                var num2 = document.getElementById("num2");
+
+                o.value = parseFloat(num1.value) + parseFloat(num2.value);
+        }
+</script>
+</body>
+</html>

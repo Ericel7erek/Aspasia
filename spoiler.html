@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+input[type="checkbox"] {
+    display: none;
+}
+
+label {
+    background: pink;
+    cursor: pointer;
+}
+
+input[type="checkbox"] + label + .contenidoOculto {
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked + label + .contenidoOculto {
+    opacity: 1;
+}
+</style>
+<body>
+    <input id="Spoiler" type="checkbox">
+    <label for="Spoiler">Spoiler</label>
+    <div class="contenidoOculto">hola</div>
+        <h1>Hacemos visible e invisible una capa pulsando un checkbox</h1>
+        <input type="checkbox" id="check1"></input>
+        <label for="check1">SPOILER</label>
+        <div class="contenidoOculto">CONTENIDO OCULTO</div>
+</body>
+</html>
