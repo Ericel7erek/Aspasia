@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="noches">
+    <select name="Plaza" id="plaza">
+        <option value="Oviedo">Oviedo</option>
+        <option value="Tokyo">Tokyo</option>
+        <option value="Madrid">Madrid</option>
+        <option value="Barcelona">Barcelona</option>
+    </select>
+    <button id="btn" onclick="calculateCost()">Calcular</button>
+    <output><input type="text" id="hotelCost"></output>
+</body>
+<script>
+    const calculateHotelCost = (n) => n * 140
+    const calculateCarRent = (n) => {
+        let cost = n*40
+        if (n >= 7) {
+            cost= cost -50
+        } else if (n>=3) {
+            cost= cost -20
+        }
+        return cost
+    }
+    const calculateAirplaneCost = (ciudad, n) => {
+        let coste;
+        if (ciudad === "Oviedo") {
+            coste = 15
+        }
+        else if (ciudad === "Tokyo") {
+            coste = 700
+        }
+        else if (ciudad === "Madrid") {
+            coste = 90
+        }
+        else if (ciudad === "Barcelona") {
+            coste = 90
+        } if (n >= 3) {
+            coste *= 0.9
+        }
+        return coste
+    
+    }
+    const calculateCost = () => {
+            const ciudad = document.querySelector("#plaza").value
+            const numNights = Number(document.querySelector("#noches").value);
+            console.log("Number of nights:", numNights);
+            const airplaneCost = calculateAirplaneCost(ciudad, numNights);
+            console.log("Plane cost:", airplaneCost);
+            const hotelCost = calculateHotelCost(numNights);
+            console.log("Hotel cost:",hotelCost);
+            const carRentCost= calculateCarRent(numNights);
+            console.log("Car cost:", carRentCost);
+            document.querySelector("#hotelCost").value = hotelCost + carRentCost + airplaneCost;
+            console.log("Total cost:", hotelCost + carRentCost + airplaneCost);
+        }
+        var input = document.querySelector("#noches")
+        input.addEventListener("keypress", function(e){
+            if(e.key==="Enter"){
+                event.preventDefault();
+                document.querySelector("#btn").click()
+            }
+        })
+</script>
+</html>

@@ -1,0 +1,45 @@
+<form >
+    <input type="number" id="txt">
+    <button type="button" id="btn" onclick="salir()">Enviar</button>
+    <input type="number" id="txt2">
+</form>
+
+<script>
+    function salir() {
+        const info= document.querySelector("#txt").value;
+        document.querySelector("#txt2").value = info*2
+    }
+</script>
+
+<form >
+    <input type="number" id="txt3">
+    <button type="button" id="btn" onclick="salir()">Enviar</button>
+    <input type="number" id="txt4">
+</form>
+<script>
+    function salir() {
+        const info= document.querySelector("#txt3").value;
+        document.querySelector("#txt4").value = info*9/5+32
+    }
+</script>
+<input type="number" id="txr">
+<select name="" id="txr2">
+    <option value="*">*</option>
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="/">/</option>
+</select>
+<input type="radio" name="rBtn" class="radiusBtn" value="1">love1</input>
+<input type="radio" name="rBtn" class="radiusBtn" value="2">love2</input>
+<input type="radio" name="rBtn" class="radiusBtn" value="3">love3</input>
+<button type="button" id="btn" onclick="calculate()">dadad</button>
+<input type="number">
+<script>
+    const calculate = () => {
+        //const value = document.querySelector('.radiusBtn:checked').value;
+        const value = document.querySelector("#txr").value;
+        const log = document.querySelector("#txr2").value;
+        const dos = document.querySelector('[name=rBtn]:checked').value
+        console.log(value +  log + dos)
+    }
+</script>

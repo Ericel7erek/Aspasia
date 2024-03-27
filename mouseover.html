@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    .box1{
+        background-color: blue;
+        height: 200px;
+        overflow: hidden;
+    }
+    .box2{
+        background-color: orange;
+        height: 200px;
+    }
+</style>
+<body>
+    <!-- <div class="box1">
+    </div>
+    <div class="box2"></div> -->
+    <input type="text">
+    <div id="c"></div>
+</body>
+<script>
+    // const cambiar = () =>{
+    //     document.querySelector(".box1").innerHTML = "<h1>Casa</h1>"
+    // } 
+    // document.querySelector(".box2").addEventListener("mouseover", cambiar)
+    let code = " cositas guays "
+    document.querySelector("input").addEventListener("input", () =>{
+        const n = document.querySelector("input").value
+        document.querySelector("#c").innerHTML = code.repeat(n)
+    })
+</script>
+</html>

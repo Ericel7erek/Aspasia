@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+</style>
+<!-- <body>
+    <input type="text" id="n1"><br>
+    <input type="text" id="n2"><br>
+    <select name="" id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    
+    <button id="calcular">Calcular</button>
+    <output id="show"></output>
+
+    <script>
+        document.querySelector("#calcular").addEventListener("click", ()=> {
+            const n1 = Number(document.querySelector("#n1").value)
+            const n2 = Number(document.querySelector("#n2").value)
+            const op = document.querySelector("#op").value
+            let r;
+            if (op=="+") {
+                r= n1+n2
+            } else if (op=="-") {
+                r= n1-n2
+            } else if (op=="/") {
+                r= n1/n2
+            } else if (op=="*") {
+                r= n1*n2
+            }
+            document.querySelector("#show").innerHTML = r
+        })
+    </script> -->
+<body>
+    <input type="text" id="n1"><br>
+    <input type="text" id="n2"><br>
+        <button id="sumar" value="+">+</button>
+        <button id="restar" value="-">-</button>
+        <button id="multiplicar" value="*">*</button>
+        <button id="dividir" value="/">/</button>
+    
+    <button id="calcular">Calcular</button>
+    <output id="show"></output>
+
+    <script>
+        let op;
+        document.querySelector("#sumar").addEventListener("click", ()=> op="+")
+        document.querySelector("#restar").addEventListener("click", ()=> op="-")
+        document.querySelector("#dividir").addEventListener("click", ()=> op="/")
+        document.querySelector("#multiplicar").addEventListener("click", ()=> op="*")
+        document.querySelector("#calcular").addEventListener("click", ()=> {
+            const n1 = Number(document.querySelector("#n1").value)
+            const n2 = Number(document.querySelector("#n2").value)
+            
+            let r;
+            if (op=="+") {
+                r= n1+n2
+            } else if (op=="-") {
+                r= n1-n2
+            } else if (op=="/") {
+                r= n1/n2
+            } else if (op=="*") {
+                r= n1*n2
+            }
+            document.querySelector("#show").innerHTML = r
+        })
+    </script>
+</body>
+</html>

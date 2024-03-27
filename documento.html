@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>¿Cuáles de los siguientes lenguajes son orientados a objetos? <span class="n">Java</span>, VB6, <span class="m">C++</span>, <span class="o">C#</span>, Cobol</p>
+    <button>Ver respuestas</button>
+<br>
+    <select name="" id="dada">
+        <option value="#">Seleccione un color</option>
+        <option value="red">red</option>
+        <option value="green">verde</option>
+        <option value="yellow">amarillo</option>
+        <option value="Pink">Rosa</option>
+    </select>
+</body>
+<script>
+    document.querySelector("button").addEventListener("click",()=> document.querySelectorAll("span").forEach(span => {
+            span.style.backgroundColor = "red";
+        }))
+
+    let color = ""
+    document.querySelector("#dada").addEventListener("change", ()=> {color = document.querySelector("#dada").value;
+    document.querySelector("body").style.backgroundColor= color})
+</script>
+</html>

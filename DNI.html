@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="DNI"><br>
+    <output><input type="text" name="" id="show" disabled></output><br>
+    <button id="btn" onclick="calcular()">no se</button>
+</body>
+<script>
+    const calcular = () => {
+        const DNI = Number(document.querySelector("#DNI").value)
+        var letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+        var letra = "";
+        let r;
+        if (DNI.toString().length===8 && !isNaN(DNI)) {
+            r = DNI.length%23;
+            letra= letras.charAt(r)
+            document.querySelector("#show").value = letra
+        }   else {
+            document.querySelector("#show").value = "no"
+            throw console.error("Numero falso de DNI");
+        }
+    }
+</script>
+</html>
