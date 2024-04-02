@@ -16,6 +16,27 @@
         <option value="yellow">amarillo</option>
         <option value="Pink">Rosa</option>
     </select>
+<br>
+<input type="text" name="" id="">
+<input type="text" name="" id="">
+<input type="text" name="" id="">
+<button class="of">click</button>
+<p class="p"></p>
+<div>
+    <button class="pulsar">pulsar</button>
+</div>
+<div>
+    <button class="pulsar">pulsar</button>
+</div>
+<div>
+    <button class="pulsar">pulsar</button>
+</div>
+<div>
+    <button class="pulsar">pulsar</button>
+</div>
+<div>
+    <button class="pulsar">pulsar</button>
+</div>
 </body>
 <script>
     document.querySelector("button").addEventListener("click",()=> document.querySelectorAll("span").forEach(span => {
@@ -25,5 +46,16 @@
     let color = ""
     document.querySelector("#dada").addEventListener("change", ()=> {color = document.querySelector("#dada").value;
     document.querySelector("body").style.backgroundColor= color})
+
+    let sum = 0
+        document.querySelector(".of").addEventListener("click", ()=>{
+                document.querySelectorAll("input").forEach((input) => {
+                sum += Number(input.value)
+                document.querySelector('.p').innerHTML = sum;
+            })
+        })
+        document.querySelectorAll(".pulsar").forEach(obj => obj.addEventListener("click",()=> {
+            obj.closest("div").style.background="red"
+        }))
 </script>
 </html>

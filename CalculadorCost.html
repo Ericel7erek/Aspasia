@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        border: 1px solid;
+        margin-top: 4px;
+        border-radius: 30px;
+        padding: 25px;
+    }
+</style>
+<body>
+    <div class="box">
+        <p><input type="radio" name="diseño" value="0" checked>El cliente me suministra el diseño</p>
+        <p><input type="radio" name="diseño" value="300">Yo me encargo del diseño</p>
+    </div>
+    <div class="box">
+        <p><input type="radio" name="cart" value="0" checked>La página no incorpora carrito de la compra</p>
+        <p><input type="radio" name="cart" value="300">La página incorpora un carrito de la compra</p>
+    </div>
+    <div class="box">
+        <p><input type="radio" name="sub" value="0" checked>La página no permite suscripción</p>
+        <p><input type="radio" name="sub" value="300">La página permite suscripción</p>
+    </div>
+    <div>
+        <p>Cost igual a<p class="result"></p></p>
+    </div>
+</body>
+<script>
+    document.querySelectorAll("[type=radio]").forEach(obj=> obj.addEventListener("click", ()=>{
+        let cost = 300
+        document.querySelectorAll("[type=radio]:checked").forEach(r => cost += Number(r.value))
+        document.querySelector(".result").textContent= cost
+    }))
+</script>
+</html>

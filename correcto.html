@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="uno">
+        <p><input class="correcta" type="radio" name="q1" id="">batman</p>
+        <br>
+        <p><input type="radio" name="q1" id="">Spiderman</p>
+    </div>
+    <button>click</button>
+</body>
+<script>
+    
+    document.querySelector("button").addEventListener("click", ()=>{
+        document.querySelectorAll("input[type=radio]").forEach(obj => obj.closest("p").style.backgroundColor = "transparent")
+        document.querySelectorAll("input[type=radio]:checked").forEach(obj => {
+            if (obj.classList.contains("correcta")) {
+                obj.closest("p").style.backgroundColor = 'palegreen'
+            } else {
+                obj.closest("p").style.backgroundColor = 'red'
+            }
+        })
+    })
+</script>
+</html>

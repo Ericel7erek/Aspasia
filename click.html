@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+    <img src="./tuxes/PinguLinux_Goku.png" alt="">
+</body>
+<script>
+    const img =  document.querySelector("img")
+    let foto1 = true;
+    const change = ()=>{
+        foto1 = !foto1;
+        if (foto1) img.setAttribute('src', "./tuxes/PinguLinux_Goku.png");
+        else img.setAttribute('src', "./tuxes/PinguLinux_Goku_saiyan.png");
+    }
+    img.addEventListener("click", change)
+</script>
+</html>
