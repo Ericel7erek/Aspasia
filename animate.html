@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pablomonteserin.com/res/javascript-es6/ex/animate-css/animate.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<style>
+    .box{
+        width: 300px;
+        height: 300px;
+        background-color: red;
+    }
+</style>
+<body>
+    <button>dada</button>
+    <div class="box"></div>
+    <input type="text">
+</body>
+<script>
+    const box = document.querySelector(".box")
+    const animate = () => box.classList.add('animate__animated', 'animate__bounce');
+    box.addEventListener('animationend', () => {
+            box.classList.remove('animate__animated', 'animate__bounce');
+        });
+    document.querySelector("button").addEventListener("click", animate)
+</script>
+</html>

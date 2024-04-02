@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        background: url(./img/back.png);
+    }
+    .container{
+        margin: auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+    .smaller{
+        width: 45rem;
+    }
+    .logo{
+        background: url(./img/logo.jpg) no-repeat;
+        width: 150px;
+        height: 150px;
+    }
+    .nav{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+    nav{
+        border-radius: 10px;
+        padding: 5px;
+        background: linear-gradient(90deg, #646464 0%,  #FDFDFD 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    ul{
+        list-style-type: none;
+    }
+    .ul{
+        text-shadow: 1px 2px black;
+        display: flex;
+        gap: 20px;
+        color: white;
+    }
+    h1{
+        color: white;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    input{
+        margin-left: auto;
+        
+    }
+    .flex{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+
+    }
+    .uno{
+        display: flex;
+        flex-direction: column;
+        background-color: #FFFFFF;
+        padding: 5px;
+        border-radius: 5px;
+        
+    }
+    .dos{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .unouno{
+        width: 17rem;
+        background-color: #FED700;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    .unodos{
+        width: 17rem;
+        background-color: #FED700;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    h2{
+        text-shadow: 1px 2px black;
+        margin: 0;
+        background-color: #646464;
+        text-align: center;
+        border-radius: 5px;
+        color: white;
+        font-weight:bolder;
+    }
+
+    .html {
+        float: left;
+    }
+    .bold{
+        font-weight: bold;
+    }
+    .blue{
+        color: blue;
+    }
+    .ol{
+        color: white;
+        padding: 0px;
+    }
+    .bt{
+        border-top: #FDFDFD 2px solid;
+    }
+    .none{
+        display: none;
+        top: 0;
+        right: 0;
+    }
+    @media (max-width: 790px) {
+        h1{
+            font-size: 1rem;
+        }
+        .container{
+            margin: auto;
+            overflow-y: hidden;
+        }
+        .input{
+            display: none;
+        }
+        .smaller{
+            margin: auto;
+            width: 100%;
+        }
+        nav{
+            display: table;
+            margin: auto;
+            
+        }
+        .ul{
+            flex-wrap: wrap;
+        }
+        .flex{
+            align-items: center;
+            justify-self: center;
+            flex-wrap: wrap;
+            margin: auto;
+            width: 20rem;
+        }
+
+        .none{
+            margin: 0;
+        display: block;
+    }
+    .nav{
+        flex-direction: column;
+    }
+    .nav img{
+        width: 100px;
+    }
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="smaller">
+            <div class="nav">
+                <input class="none" type="text" placeholder="Search">
+                <img src="./img/logo.jpg" alt="">
+                <h1>Responsive Design con Css3 Media Queries</h1>
+            </div>
+            <nav>
+                <ul class="ul">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Quienes Somos</a></li>
+                    <li><a href="">Servicios</a></li>
+                    <li><a href="">Portfolio</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">Contacto</a></li>
+                    <input class="input" type="text" placeholder="Search">
+                </ul>
+                
+            </nav>
+            <div class="flex">
+                <div class="uno">
+                    <h2>Html5</h2>
+                <div class="contenido">
+                        <img class="html" src="./img/html.jpg" alt="">
+                        <p><span class="bold">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</span> Accusantium, veniam similique? Harum doloribus eum
+                            reiciendis rerum! <span class="blue"> Consequatur, saepe dolore iste nulla molestiae dolor enim possimus eum? Sit quis veritatis rerum.</span>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis impedit dolorem, molestiae recusandae accusantium
+                            molestias voluptatibus pariatur architecto natus quis. Quisquam quibusdam vero qui dolorum, magnam eligendi unde ea
+                            suscipit!
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium, veniam similique? Harum doloribus eum
+                            reiciendis rerum! Consequatur, saepe dolore iste nulla molestiae dolor enim possimus eum? Sit quis veritatis rerum.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis impedit dolorem, molestiae recusandae accusantium
+                            molestias voluptatibus pariatur architecto natus quis. Quisquam quibusdam vero qui dolorum, magnam eligendi unde ea
+                            suscipit!</p>
+                </div>
+                    <h2>CSS3</h2>
+                    <div class="contenido">
+                        <img class="html" src="./img/css.jpg" alt="">
+                                                <p><span class="bold">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</span> Accusantium, veniam similique?
+                                                    Harum doloribus eum
+                                                    reiciendis rerum! <span class="blue"> Consequatur, saepe dolore iste nulla molestiae dolor enim possimus eum? Sit
+                                                        quis veritatis rerum.</span>
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis impedit dolorem, molestiae recusandae accusantium
+                                                    molestias voluptatibus pariatur architecto natus quis. Quisquam quibusdam vero qui dolorum, magnam eligendi unde ea
+                                                    suscipit!
+                                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium, veniam similique? Harum doloribus eum
+                                                    reiciendis rerum! Consequatur, saepe dolore iste nulla molestiae dolor enim possimus eum? Sit quis veritatis rerum.
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis impedit dolorem, molestiae recusandae accusantium
+                                                    molestias voluptatibus pariatur architecto natus quis. Quisquam quibusdam vero qui dolorum, magnam eligendi unde ea
+                                                    suscipit!</p>
+                    </div>
+                </div>
+                    <div class="dos">
+                        <div class="unouno">
+                            <h2>Noticias</h2>
+                    
+                            <ul class="ol">
+                                <li class="bt">Diseño web</li>
+                                <li class="bt">Diseño Grafico</li>
+                                <li class="bt">Diseño Wordpress</li>
+                                <li class="bt">joomla</li>
+                                <li class="bt">Drupal</li>
+                                <li class="bt">Redes Sociales</li>
+                                <li class="bt">SEO</li>
+                            </ul>
+                        </div>
+                        <div class="unodos">
+                            <h2>Noticias</h2>
+                    
+                            <ul class="ol">
+                                <li class="bt">Diseño web</li>
+                                <li class="bt">Diseño Grafico</li>
+                                <li class="bt">Diseño Wordpress</li>
+                                <li class="bt">joomla</li>
+                                <li class="bt">Drupal</li>
+                                <li class="bt">Redes Sociales</li>
+                                <li class="bt">SEO</li>
+                            </ul>
+                        </div>
+                    
+                    </div>
+            </div>
+    </div>
+
+                    </div>
+</body>
+</html>

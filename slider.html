@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .azul{
+        overflow: hidden;
+        width: 256px;
+        height: 500px;
+    }
+    .grande{
+        display: flex;
+        flex-wrap:wrap;
+        flex-direction: column;
+        height: 500px;
+        width: 768px;
+        transition: 1s;
+    }
+</style>
+<body>
+    <a href="#" class="switch">enlace 1</a>
+    <div class="azul">
+        <div class="grande">
+            <img src="./tuxes/PinguLinux_Batman.png" alt="">
+
+
+            <img src="./tuxes/PinguLinux_Goku.png" alt="">
+
+            <img src="./tuxes/PinguLinux_Goku_saiyan.png" alt="">
+
+        </div>
+    </div>
+</body>
+<script>
+    let cada = 0
+    
+    document.querySelector(".switch").addEventListener("click", ()=> {
+        cada= cada==2 ? cada=0 :cada+ 1
+        document.querySelector(".grande").style.marginLeft = -256*cada + "px"})
+</script>
+</html>
