@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1px">
+        <tr>
+            <td><input type="radio" name="q"></td>
+            <td>txt2</td>
+            <td>txt3</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="q"></td>
+            <td>txt2</td>
+            <td>txt3</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="q"></td>
+            <td>txt2</td>
+            <td>txt3</td>
+        </tr>
+    </table>
+
+    <script>
+        document.querySelectorAll("tr").forEach(tr=> tr.addEventListener("click", 
+        ()=> {
+            document.querySelectorAll("tr").forEach(t => t.style.backgroundColor = "transparent");
+            tr.style.backgroundColor = "red"
+            tr.querySelector("input").checked = true 
+        }
+        ))
+
+    </script>
+</body>
+
+</html>
