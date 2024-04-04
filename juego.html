@@ -1,0 +1,61 @@
+<style>
+    .board {
+        display: grid;
+        grid-template-columns: 250px 250px 250px;
+        grid-template-rows: 250px 250px 250px;
+        width: 750px;
+        margin: auto;
+    }
+</style>
+
+<div class="board">
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+</div>
+
+<script>
+    const btns = document.querySelectorAll('button');
+
+    const evaluateWin = () => {
+        const colors = Array.from(btns).map(b => b?.style.backgroundColor)
+
+        if (colors[0] === colors[1] && colors[0] === colors[2] && colors[0] !== '') {
+            return true
+        } else if (colors[3] === colors[4] && colors[3] === colors[5] && colors[3] !== '') {
+            return true
+        } else if (colors[6] === colors[7] && colors[6] === colors[8] && colors[6] !== '') {
+            return true
+        } else if (colors[0] === colors[3] && colors[0] === colors[6] && colors[0] !== '') {
+            return true
+        } else if (colors[1] === colors[4] && colors[1] === colors[7] && colors[1] !== '') {
+            return true
+        } else if (colors[2] === colors[5] && colors[2] === colors[8] && colors[2] !== '') {
+            return true
+        } else if (colors[0] === colors[4] && colors[0] === colors[8] && colors[0] !== '') {
+            return true
+        } else if (colors[2] === colors[4] && colors[2] === colors[6] && colors[2] !== '') {
+            return true
+        }
+    }
+    let player = 'red';
+    btns.forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+            const clickedColor = btn.style.backgroundColor;
+
+            if (clickedColor !== '') return;
+
+            player = player === 'red' ? 'green' : 'red';
+            btn.style.backgroundColor = player;
+            if (evaluateWin()) {
+                alert('enhorabuena ' + player)
+            }
+        })
+    })
+</script>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        .container{
+            margin: auto;
+        }
+        .img{
+            width: 200px;
+            height: 207px;
+            background: url(https://pablomonteserin.com/wp-content/uploads/2020/05/hangman-game_pm-1024x212.png) no-repeat;
+        }
+        .ox{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+<body>
+    <div class="container">
+    <div class="ox">
+    <div class="h1">
+        <h1>Juego del ahorcado con Javascript</h1>
+                    <p class="o"></p>
+                    <input type="text"><br>
+                    <button>Verificar</button>
+    </div>
+            <div class="img"></div>
+    </div>
+    </div>
+</body>
+<script>
+    const replaceAt = (string, character, index) => {
+            return string.substring(0, index) + character + string.substring(index + character.length);
+        }
+
+        const words = ["elon", "rex", "integral", "casa"]
+        let secretWord = words[Math.floor(Math.random() * words.length)]
+        let hiddenWord = secretWord.replace(/./g, "_ ");
+        let errorCounter= 0
+        document.querySelector(".o").textContent = hiddenWord
+        document.querySelector("button").addEventListener
+        ("click", ()=> {
+            let input = document.querySelector("input").value
+            document.querySelector("input").value= ""
+            let error= true
+                for (let i = 0; i < secretWord.length; i++) {
+                    if (input == secretWord[i]) {
+                        hiddenWord = replaceAt(hiddenWord, input, i * 2)
+                        error= false
+                    }} 
+                document.querySelector(".o").textContent = hiddenWord
+                if (error) {
+                    errorCounter++
+                    console.log(errorCounter)
+                    document.querySelector(".img").style.backgroundPosition= -errorCounter*200+"px"
+                    if (errorCounter===4) {
+                        document.querySelector(".h1").innerHTML= "<h1>Estas Estupido/a</h1>"
+                    }
+                } else if (!hiddenWord.includes("_")) {
+                    alert("Congrats!!!")
+                }
+            }
+        )
+
+</script>
+</html>

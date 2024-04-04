@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .center{
+        display: flex;
+        justify-content: center;
+        overflow-y: auto;
+
+    }
+    .box{
+        background-color: red;width: 1024px;height: 100px;border-radius: 100px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        box-sizing: border-box;
+        overflow: visible;
+    }
+
+    .box:hover{
+        background-color: blue;
+
+    }
+    .col1{
+        background-color: green
+    }
+    .col2{background-color: yellow;}
+    .col3{background-color: aqua;}
+    .derecha{
+        display: table;
+        margin-left: auto;
+        position: sticky;
+        background-color: black;
+        width: 100px;
+    }
+    .izquierda{
+        display: table;
+        margin-right: auto;
+        background-color: black;
+        width: 100px;
+        height: 100px;
+    }
+    .izquierda:hover{
+        background: url(https://upload.wikimedia.org/wikipedia/commons/f/f9/Wiktionary_small.svg);
+        
+    }
+</style>
+<body>
+    <div class="container">
+            <div class="derecha">d</div>
+            <div class="izquierda"></div>
+        <div class="center">
+            <div class="box">
+                <div class="col1">
+                    <ul>
+                        <li><a href="">a</a></li>
+                        <li><a href="">a</a></li>
+                        <li><a href="">a</a></li>
+                        <li><a href="">a</a></li>
+                        <li><a href="">a</a></li>
+                        <li><a href="">a</a></li>
+                        <li><a href="">a</a></li>
+                        <li><a href="">a</a></li>
+                        <li><a href="">a</a></li>
+                        <li><a href="">a</a></li>
+                        <li><a href="">a</a></li>
+                        <li><a href="">a</a></li>
+                        <li><a href="">a</a></li>
+                        <li><a href="">a</a></li>
+                        <li><a href="">a</a></li>
+                        <li><a href="">a</a></li>
+                        <li><a href="">a</a></li>
+                        <li><a href="">a</a></li>
+                        <li><a href="">a</a></li>
+                    </ul>
+                </div>
+                <div class="col2">
+                    <img onClick="window.open('http://www.google.com','_blank')"
+                        src="https://www.shutterstock.com/image-vector/compact-size-icon-vector-illustration-260nw-489811306.jpg"
+                        alt="">
+                </div>
+                <div class="col3"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
