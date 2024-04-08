@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        border: 1px dashed red;
+        border-radius: 10px;
+        padding: 25px;
+        margin-bottom: 2px;
+        width: 40rem;
+    }
+    .dos{
+        border: 1px dashed blue;
+    }
+    p{
+        font-size: 2rem;
+    }
+    span:hover{
+        background-color: rgba(255, 192, 203,0.9);
+
+    }
+</style>
+<body>
+    <div class="box">
+        <p class="false"></p>
+    </div>
+    <div class="box dos">
+        <p class="right"></p>
+    </div>
+    <button>Checker</button>
+</body>
+<script>
+    const blue = []
+    const blues = document.querySelector(".right")
+    const red = document.querySelector(".false")
+    const frases = "la hormiga es más pequeña que el elefante";
+    Array.prototype.shuffle = function () {
+            let i = this.length;
+            if (i == 0) return this;
+            while (--i) {
+                let j = Math.floor(Math.random() * (i + 1));
+                let a = this[i];
+                let b = this[j];
+                this[i] = b;
+                this[j] = a;
+            }
+            return this;
+        };
+    const shuffledSentence = frases.split(' ').shuffle().join(' ');
+        console.log(shuffledSentence);
+        red.innerHTML= shuffledSentence
+            red.addEventListener("click", (event) => {
+                    if (event.target.nodeName === 'SPAN') {
+                        let clickedWord = event.target.textContent;
+                        blue.push(clickedWord);
+                        console.log("Word added to 'blue' array: " + clickedWord);
+                    
+                        console.log('blue', blue)
+                        blues.textContent = blue.join(" ")
+                        console.log(blues.textContent);
+                    }
+                });
+                red.innerHTML = red.textContent.split(" ").map(word => `<span>${word}</span>`).join(" ");
+        document.querySelector("button").addEventListener("click" ,()=> {
+            if (blues.textContent === frases) {
+                document.querySelector(".right").textContent = "Correct"
+                document.querySelector("body").style.backgroundColor = "green"
+            } else {
+                document.querySelector("body").style.backgroundColor ="red"
+            }
+        })
+
+</script>
+</html>

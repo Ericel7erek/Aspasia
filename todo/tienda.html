@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .results{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .box{
+        background-color: #212121;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+        padding: 25px;
+        color: wheat;
+        border-radius: 20px;
+        transition: 2s;
+    }
+
+    .box:hover {
+        scale: 1.1;
+    }
+    p{
+        color: green;
+    }
+    img{
+        width: 150px;
+        
+    }
+</style>
+<body>
+    <div class="results">
+        <p></p>
+        <img src="" alt="">
+    </div>
+</body>
+<script>
+fetch('https://api.mercadolibre.com/sites/MLA/search?q=malabares')
+.then(res => res.json())
+.then(res => {
+    const data = res.results
+
+document.querySelector(".results").innerHTML = data.map(u => `<div class="box"> ${u.title} <img src="${u.thumbnail}" alt="" > <p>${u.price}$</p></div>`).join(" ")
+
+}
+);
+
+</script>
+</html>
