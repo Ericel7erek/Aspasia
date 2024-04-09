@@ -1,22 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useRef } from 'react'
 const Rectangulo = () => {
-    const width = useRef()
-    const height = useRef()
-    const res = useRef()
+    const [width, setWidth] = useState()
+    const [height, setHeight] = useState()
+    const [res, setRes] = useState()
     const calculate = () => {
-        const w = width.current.value
-        const h = height.current.value
-        res.current.value = w * h
+        const w = width
+        const h = height
+        setRes(w * h)
     }
 
   return (
     <div>
         <div><h1>Rectangulo</h1></div>
-        <input type="text" ref={width}/>
-        <input type="text" ref={height}/>
+        <input type="text" onChange={e=> setWidth(e.target.value)}/>
+        <input type="text" onChange={e=> setHeight(e.target.value)}/>
         <button onClick={calculate}>Calculate</button>
-        <output ref={res}></output>
+        <output>{res}</output>
     </div>
   )
 }
