@@ -10,6 +10,8 @@ import Componente2 from "./Components/Componente2";
 import NewComponent from './Ejercicios/NewComponent'
 import { useState } from 'react'
 import Styledcomponents from './Components/Styledcomponents'
+import { GlobalStyle, StyleComponent1, StyleComponent2 } from './app/style'
+import Teatro from './Components/Teatro'
 const App = () => {
 
   const text = <p>Hola</p>
@@ -37,7 +39,13 @@ const App = () => {
   const [value, setValue] = useState(0);
   return (
   <div>
-    {/* {books.map( b=> <Book book={b.title} />)}
+    <Teatro/>
+    {/* <GlobalStyle />
+    <StyleComponent1/>
+    <StyleComponent2><p>AAAAA</p></StyleComponent2> */}
+    <Styledcomponents/> 
+    {/* {books.map( b=> <Book book={  b.title} />)} */}
+    {/*
     <Book book="Viaje a la luna" />
     <EurosToDolares/>
     <Fahrenheit/>
@@ -46,13 +54,13 @@ const App = () => {
     <MyComponent onSomeEvent={changePadre} />
     <Componente1 calculate={setResult}/>
     <Componente2  result={result}/>
-    <NewComponent NewValue={setValue}/> */}
-    <Styledcomponents/>
-    {/* {value}
+    <NewComponent NewValue={setValue}/> 
+     
+    {value}
     <h1>{text}</h1>
     <h2>{data}</h2>
-    <div><p>par</p></div>
-    {100+100} */}
+    <div><p>par</p></div> 
+     {100+100} */}
   </div>
   )
 }
