@@ -12,6 +12,8 @@ import { useState } from 'react'
 import Styledcomponents from './Components/Styledcomponents'
 import { GlobalStyle, StyleComponent1, StyleComponent2 } from './app/style'
 import Teatro from './Components/Teatro'
+import Trivia from './Components/Trivia'
+import Training from './Components/Training'
 const App = () => {
 
   const text = <p>Hola</p>
@@ -31,21 +33,22 @@ const App = () => {
       age: 32,
     }
   ]
-  const data = characters.map(character => {
-    return (
-    <p>{character.name}</p>
-  )})
-  const changePadre = param =>  alert(param);
-  const [value, setValue] = useState(0);
+  // const data = characters.map(character => {
+  //   return (
+  //   <p>{character.name}</p>
+  // )})
+  // const changePadre = param =>  alert(param);
+  // const [value, setValue] = useState(0);
   return (
   <div>
+    <Training/>
+    {/*<Trivia/>
     <Teatro/>
-    {/* <GlobalStyle />
+    <GlobalStyle />
     <StyleComponent1/>
-    <StyleComponent2><p>AAAAA</p></StyleComponent2> */}
+    <StyleComponent2><p>AAAAA</p></StyleComponent2> 
     <Styledcomponents/> 
-    {/* {books.map( b=> <Book book={  b.title} />)} */}
-    {/*
+    {books.map( b=> <Book book={  b.title} />)} 
     <Book book="Viaje a la luna" />
     <EurosToDolares/>
     <Fahrenheit/>
@@ -55,7 +58,6 @@ const App = () => {
     <Componente1 calculate={setResult}/>
     <Componente2  result={result}/>
     <NewComponent NewValue={setValue}/> 
-     
     {value}
     <h1>{text}</h1>
     <h2>{data}</h2>

@@ -35,9 +35,9 @@ display: ${({visible}) => visible? 'block' : 'none'};
 background-color: red;
     width: 300px;
     height: 300px;
-    &:hover {
+    /* &:hover {
     background-color: paleGreen
-}
+} */
 `
 
 export const Rectangulo = styled(Box)`
@@ -80,4 +80,8 @@ ${BigText}
 `
 export const P = styled.p`
 background-color: ${({color}) => color ? 'green' :'transparent'};
+`
+
+export const CajaRoja = styled.img`
+border: ${({border})=> border? '2px solid red': '' };
 `
