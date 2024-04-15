@@ -81,7 +81,35 @@ ${BigText}
 export const P = styled.p`
 background-color: ${({color}) => color ? 'green' :'transparent'};
 `
-
+export const Pa = styled.p`
+background-color: aliceblue;
+border-radius: 99px;
+padding: 10px;
+outline-color: gray;
+z-index: 2;
+position: relative;
+`
 export const CajaRoja = styled.img`
 border: ${({border})=> border? '2px solid red': '' };
 `
+export const Scene = styled.div`
+    width: ${({width}) => width};
+    height: ${({height}) => height};
+    background:url(${({ back }) => back});
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: black;
+    position: relative;
+    margin:auto;
+`;
+
+export const Door = styled.div`
+    position: absolute;
+    left: ${({ data }) => data.x}%;
+    top: ${({ data }) => data.y}%;
+    width: ${({ data }) => data.width}%;
+    height: ${({ data }) => data.height}%;
+    border: 1px solid red;
+    cursor: pointer;
+`;

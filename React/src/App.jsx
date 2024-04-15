@@ -14,6 +14,7 @@ import { GlobalStyle, StyleComponent1, StyleComponent2 } from './app/style'
 import Teatro from './Components/Teatro'
 import Trivia from './Components/Trivia'
 import Training from './Components/Training'
+import Cuenta from './Components/Cuenta'
 const App = () => {
 
   const text = <p>Hola</p>
@@ -41,8 +42,9 @@ const App = () => {
   // const [value, setValue] = useState(0);
   return (
   <div>
-    <Training/>
-    {/*<Trivia/>
+    <Cuenta/>
+    {/*<Training/>
+    <Trivia/>
     <Teatro/>
     <GlobalStyle />
     <StyleComponent1/>
