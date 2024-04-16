@@ -1,27 +1,41 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { P } from '../app/style'
+import { getPeople } from '../api/api'
+import { getJokes } from '../api/apiChuck'
+
 
 const Api = () => {
     const [news, setNews] = useState([])
-    const [url, setUrl] = useState('')
+    const [url, setUrl] = useState([])
+    const [name, setName] = useState('')
     const ApiKey= "ab1abf526a814f8a851896cb370e2f0d"
     useEffect(() => {
         fetch(`https://newsapi.org/v2/top-headlines?country=eg&apiKey=${ApiKey}`).then(res => res.json()).then(data => {
             setNews(data.articles)
-    })}, [])
-    console.log(22222222222,news);
+      //             getPeople().then(people =>
+
+      //   setUrl(people)
+      // )
+      getJokes(name).then(data => setUrl(data))
+    })}, [name])
+    console.log(22222222222,news,url);
   return (
-    <div>{news.map((u,i) => 
-    <div key={i}>
-        <h1>{u.author}</h1>
-        <p >{u.title}</p>
-        <a href={u.url} target="pp" >{u.url}</a>
-
-        <iframe name="pp"  frameborder="0"></iframe>
-    </div>
-)}</div>
-
+//     <div style={{display:'flex', flexDirection: 'column' }}>{news.map((u,i) => 
+//     <div key={i}>
+//         <h1>{u.author}</h1>
+//         <h2 >{u.title}</h2>
+//         <a href={u.url}><button>Show Post</button></a>
+//     </div>
+// )}</div>
+<div>
+  <ul>
+    <li onClick={()=>setName('animal')}>animal</li>
+    <li onClick={()=>setName('career')}>career</li>
+    <li onClick={()=>setName('dev')}>dev</li>
+    <li onClick={()=>setName('history')}>history</li>
+  </ul>
+  <p>{url}</p>
+</div>
   )
 }
 
