@@ -16,7 +16,7 @@ const Api = () => {
     <div key={i}>
         <h1>{u.author}</h1>
         <p >{u.title}</p>
-        <a href='https://m.youm7.com/story/' target="pp" >{u.url}</a>
+        <a href={u.url} target="pp" >{u.url}</a>
 
         <iframe name="pp"  frameborder="0"></iframe>
     </div>
