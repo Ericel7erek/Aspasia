@@ -15,6 +15,7 @@ import Teatro from './Components/Teatro'
 import Trivia from './Components/Trivia'
 import Training from './Components/Training'
 import Cuenta from './Components/Cuenta'
+import Router from './app/Router'
 const App = () => {
 
   const text = <p>Hola</p>
@@ -42,8 +43,9 @@ const App = () => {
   // const [value, setValue] = useState(0);
   return (
   <div>
-    <Cuenta/>
-    {/*<Training/>
+    <Router/>
+    {/*<Cuenta/>
+    <Training/>
     <Trivia/>
     <Teatro/>
     <GlobalStyle />
