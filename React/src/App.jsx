@@ -9,15 +9,9 @@ import Componente1 from "./Components/Componente1";
 import Componente2 from "./Components/Componente2";
 import NewComponent from './Ejercicios/NewComponent'
 import { useState } from 'react'
-import Styledcomponents from './Components/Styledcomponents'
 import { GlobalStyle, StyleComponent1, StyleComponent2 } from './app/style'
-import Teatro from './Components/Teatro'
-import Trivia from './Components/Trivia'
-import Training from './Components/Training'
-import Cuenta from './Components/Cuenta'
 import Router from './app/Router'
-import Api from './Components/Api'
-import Starwars from './Components/Starwars/Starwars'
+
 const App = () => {
 
   const text = <p>Hola</p>

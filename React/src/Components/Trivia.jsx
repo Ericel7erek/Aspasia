@@ -4,15 +4,15 @@ import { PopUp } from '../app/style'
 
 const Trivia = () => {
     const [currentIndex, setCurrentIndex] = useState(0)
-    console.log(Questions[currentIndex].answers);
+    
     return (
     <div style={{display:'flex', justifyContent: 'center'}}>
     {currentIndex<3&&<div>
         {Questions[currentIndex].question}
         {Questions[currentIndex].answers.map((question, index) => {
-            return <div style={{display:'flex'}}>
-        <button onClick={() => {question.isRight? setCurrentIndex(currentIndex + 1)%3: alert('Joder')}}>X</button>
-        <p className={question.isRight} key={index}>{question.txt}</p>
+            return <div key={index} style={{display:'flex'}}>
+        <button onClick={() => {question.isRight? setCurrentIndex(currentIndex + 1)%4: alert('Joder')}}>X</button>
+        <p className={question.isRight} >{question.txt}</p>
         </div>
 })}
 <img src={Questions[currentIndex].img} alt="" width={'300px'} />

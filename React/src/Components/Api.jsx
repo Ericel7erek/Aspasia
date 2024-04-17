@@ -12,30 +12,16 @@ const Api = () => {
     useEffect(() => {
         fetch(`https://newsapi.org/v2/top-headlines?country=eg&apiKey=${ApiKey}`).then(res => res.json()).then(data => {
             setNews(data.articles)
-      //             getPeople().then(people =>
-
-      //   setUrl(people)
-      // )
-      getJokes(name).then(data => setUrl(data))
-    })}, [name])
+    })}, [])
     console.log(22222222222,news,url);
   return (
-//     <div style={{display:'flex', flexDirection: 'column' }}>{news.map((u,i) => 
-//     <div key={i}>
-//         <h1>{u.author}</h1>
-//         <h2 >{u.title}</h2>
-//         <a href={u.url}><button>Show Post</button></a>
-//     </div>
-// )}</div>
-<div>
-  <ul>
-    <li onClick={()=>setName('animal')}>animal</li>
-    <li onClick={()=>setName('career')}>career</li>
-    <li onClick={()=>setName('dev')}>dev</li>
-    <li onClick={()=>setName('history')}>history</li>
-  </ul>
-  <p>{url}</p>
-</div>
+    <div style={{display:'flex', flexDirection: 'column' }}>{news.map((u,i) => 
+    <div key={i}>
+        <h1>{u.author}</h1>
+        <h2 >{u.title}</h2>
+        <a href={u.url}><button>Show Post</button></a>
+    </div>
+)}</div>
   )
 }
 

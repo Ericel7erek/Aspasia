@@ -1,12 +1,13 @@
 import styled, {css, keyframes, createGlobalStyle} from 'styled-components';
 import font from '../font/Nicolast.ttf';
-
+import { Link } from 'react-router-dom';
 const desktopWidth = 996
 const desktop = `@media (min-width: ${desktopWidth}px)`
 const mobile = `@media (max-width: ${desktopWidth}px)`
 export const GlobalStyle = createGlobalStyle`
 body{
-    background-color: #ADD8E6
+    background-color: #ADD8E6;
+    margin: 0px !important
 }
 @font-face {
     font-family: Nicolast;
@@ -115,8 +116,39 @@ export const Door = styled.div`
 `;
 
 export const Container = styled.div`
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+gap: 0.1rem;
+background-color: black;
+text-align: center;
+`;
+export const PageLink = styled(Link)`
+text-decoration: none;
+color: white;
+padding: 1rem 5rem ;
+font-size: 2rem;
+transition: 1s;
+&:hover{
+background-color: whitesmoke;
+color: black;
+}
+`;
+
+export const UL = styled.ul`
 display: flex;
-flex-wrap: wrap;
-width: 400px;
-gap: 0.5rem;
+justify-content: space-between;
+list-style:none;
+background-color: black;
+padding: 25px;
+;
+& a{
+text-decoration: none;
+color: white;
+padding: 1rem;
+transition: 1s
+}
+& a:hover{
+    background-color: white;
+    color: black;
+}
 `
