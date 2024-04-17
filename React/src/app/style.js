@@ -117,5 +117,6 @@ export const Door = styled.div`
 export const Container = styled.div`
 display: flex;
 flex-wrap: wrap;
+width: 400px;
 gap: 0.5rem;
 `

@@ -17,7 +17,7 @@ import Training from './Components/Training'
 import Cuenta from './Components/Cuenta'
 import Router from './app/Router'
 import Api from './Components/Api'
-import Starwars from './Components/Starwars'
+import Starwars from './Components/Starwars/Starwars'
 const App = () => {
 
   const text = <p>Hola</p>
@@ -45,9 +45,9 @@ const App = () => {
   // const [value, setValue] = useState(0);
   return (
   <div>
-    <Starwars/>
-    {/*<Api/>
+    {/* <Starwars/> */}
     <Router/>
+    {/*<Api/>
     <Cuenta/>
     <Training/>
     <Trivia/>
