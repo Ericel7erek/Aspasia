@@ -25,8 +25,6 @@ const Starwars = () => {
         })
         
     },[id])
-
-    console.log('2222',people, peopleCount);
   return (
     <div>
     <Container>

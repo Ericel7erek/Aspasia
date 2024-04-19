@@ -39,8 +39,11 @@ const App = () => {
   // const [value, setValue] = useState(0);
   return (
   <div>
-    {/* <Starwars/> */}
+    <GlobalStyle>
+
+    </GlobalStyle>
     <Router/>
+    {/* <Starwars/> */}
     {/*<Api/>
     <Cuenta/>
     <Training/>

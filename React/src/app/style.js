@@ -6,8 +6,7 @@ const desktop = `@media (min-width: ${desktopWidth}px)`
 const mobile = `@media (max-width: ${desktopWidth}px)`
 export const GlobalStyle = createGlobalStyle`
 body{
-    background-color: #ADD8E6;
-    margin: 0px !important
+    margin: 0px;
 }
 @font-face {
     font-family: Nicolast;
@@ -117,10 +116,25 @@ export const Door = styled.div`
 
 export const Container = styled.div`
 display: grid;
-grid-template-columns: 1fr 1fr 1fr;
+grid-template-columns:repeat(4, 1fr);
 gap: 0.1rem;
 background-color: black;
 text-align: center;
+& img{
+    width: 200px;
+    border-radius: 50%;
+}
+& a{
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    transition: 1s;
+    border-radius:50px;
+    &:hover{
+        background-color: whitesmoke;
+        color: black;
+    }
+}
 `;
 export const PageLink = styled(Link)`
 text-decoration: none;
@@ -140,6 +154,7 @@ justify-content: space-between;
 list-style:none;
 background-color: black;
 padding: 25px;
+margin: 0px;
 ;
 & a{
 text-decoration: none;

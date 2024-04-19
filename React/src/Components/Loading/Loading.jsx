@@ -7,7 +7,7 @@ const LoadingScreen = () => {
         // Simulate a delay to show the loading screen
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 2000); // Adjust the delay time as needed
+        }); // Adjust the delay time as needed
 
         return () => clearTimeout(timer);
     }, []);

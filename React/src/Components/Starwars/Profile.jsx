@@ -8,8 +8,9 @@ const Profile = () => {
     const [films, setFilms] = useState([])
     const [info, setInfo] = useState([])
     const [species, setSpecies] = useState("")
-    useEffect(async() => {
-        // 1. Obtener la información del personaje
+    useEffect(() => {
+       const f = async() =>{
+         // 1. Obtener la información del personaje
         getInfo(id).then(data => {
             
                 getFilms(data.films).then(d =>{
@@ -23,9 +24,11 @@ const Profile = () => {
         getSpecies(id).then(data=> setSpecies(data.name))
         
         
-console.log('rrrrrrrrrrrrrrrrrr', p)
-    console.log(11111,p)
+// console.log('rrrrrrrrrrrrrrrrrr', p)
+    // console.log(11111,p)
     // setFilms(p.title)
+       }
+       f();
 }, [])
 console.log(22222,films, info, species);
   return (
