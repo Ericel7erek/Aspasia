@@ -24,6 +24,6 @@
     "skipLibCheck": true,
     "strict": true
   },
-  "include": ["./**/*.ts", "./**/*.tsx", "vite.config.js"],
+  "include": ["./**/*.ts", "./**/*.tsx", "vite.config.js", "Provider/UserProvider.jsx"],
   "exclude": ["dist", "build", "node_modules"]
 }

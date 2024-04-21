@@ -1,4 +1,4 @@
-import { collection, addDoc, getDocs, query,db,doc ,updateDoc, getDoc, deleteDoc } from "./firebase";
+import { collection, addDoc, getDocs, query,db,doc ,updateDoc, getDoc, deleteDoc, where } from "./firebase";
 import { type QuerySnapshot } from 'firebase/firestore'
 
 export type todo = {
@@ -31,6 +31,7 @@ export const getItemById = async (id:string) => {
     const result = await getDoc(docRef);
     return result.data();
 }
+
 export const deleteItem = async (id:string) => {
     const docRef = doc(db, collectionName, id);
     await deleteDoc(docRef);
@@ -40,4 +41,14 @@ const getArrayFromCollection = (collection:QuerySnapshot) => {
     return collection.docs.map((doc) => {
         return { ...doc.data(), id: doc.id } as todo;
     });
+}
+// Access 
+export const access = async (name?:string) => {
+    const colRef = collection(db, collectionName);
+    const result = await getDocs(query(colRef, where('name', '==', name)));
+    if (result.size === 0) {
+        const a = await addDoc(colRef, { name });
+        return a.id;
+    }
+    return result.docs[0].id;
 }

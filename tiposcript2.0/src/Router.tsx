@@ -4,6 +4,7 @@ import Read from './Components/Read'
 import Write from './Components/Write'
 import Layout from './Components/Layout'
 import Edit from './Components/Edit'
+import Nuevo from './Components/Nuevo'
 
 const Router = () => {
   return (
@@ -13,6 +14,7 @@ const Router = () => {
     <Route path='/' element={<Read/>} />
     <Route path='/Write' element={<Write />} />
     <Route path='/edit/:id' element={<Edit/>} />
+    <Route path='/Nuevo' element={<Nuevo/>} />
     </Routes>
     </Layout>
     </BrowserRouter>

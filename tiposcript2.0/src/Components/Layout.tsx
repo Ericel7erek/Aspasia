@@ -5,7 +5,8 @@ const Layout = ({children}:any) => {
         <div>    
                 <ul>
                         <li><Link to="/">Read</Link></li>
-                        <li><Link to="/Write">Write</Link></li>
+                        {/* <li><Link to="/Write">Write</Link></li> */}
+                        <li><Link to="/Nuevo">Nuevo</Link></li>
                 </ul>
                 <main>{children}</main>
         </div>
