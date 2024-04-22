@@ -6,6 +6,7 @@ const Layout = ({children}) => {
   return (
     <div>
         <UL>
+            <li><Link to='/JuegoDeMesa'>JuegoDeMesa</Link></li>
             <li><Link to='/Falacias'>Falacias</Link></li>
             <li><Link to='/ChuckFacts'>ChuckFacts</Link></li>
             <li><Link to='/StyledComponents'>StyledComponents</Link></li>

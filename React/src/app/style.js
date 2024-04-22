@@ -1,6 +1,8 @@
 import styled, {css, keyframes, createGlobalStyle} from 'styled-components';
 import font from '../font/Nicolast.ttf';
 import { Link } from 'react-router-dom';
+import image from '../assets/Juegoç/assets/img/parchis.svg';
+
 const desktopWidth = 996
 const desktop = `@media (min-width: ${desktopWidth}px)`
 const mobile = `@media (max-width: ${desktopWidth}px)`
@@ -150,6 +152,7 @@ color: black;
 
 export const UL = styled.ul`
 display: flex;
+flex-wrap: wrap;
 justify-content: space-between;
 list-style:none;
 background-color: black;
@@ -166,4 +169,32 @@ transition: 1s
     background-color: white;
     color: black;
 }
+`
+
+export const Board = styled.div`
+width: ${({ width }) => width}px;
+height: ${({ height }) => height}px;
+background:  url(${image});
+margin: auto;
+position: relative;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+`
+export const Chip = styled.div`
+   background:${({ color }) => color};
+   width:5%;
+   height:5%;
+   border-radius: 100%;
+   top: ${({ y }) => y}%;
+   left: ${({ x }) => x}%;
+   position:absolute;
+`;
+
+export const Pos = styled.div`
+top: ${({ y }) => y}%;
+left: ${({ x }) => x}%;
+width: ${({ width }) => width}%;
+height: ${({ height }) => height}%;
+position: absolute;
+border: 1px solid red;
 `

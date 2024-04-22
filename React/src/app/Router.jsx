@@ -13,11 +13,13 @@ import Api from '../Components/Api'
 import Styledcomponents from '../Components/Styledcomponents'
 import ChuckApi from '../Components/ChuckApi'
 import Falacias from '../Components/Falacias'
+import JuegoDeMesa from '../Components/JuegoDeMesa'
 const Router = () => {
   return (
     <BrowserRouter>
     <Layout>
         <Routes>
+        <Route path='/JuegoDeMesa' element={<JuegoDeMesa/>} />
         <Route path='/Falacias' element={<Falacias/>}/>
         <Route path='/ChuckFacts' element={<ChuckApi/>}/>
         <Route path='/StyledComponents' element={<Styledcomponents/>}/>

@@ -1,9 +1,10 @@
 import React from 'react'
+import data from '../assets/newJson/Falacia.json'
 
 const Falacias = () => {
     
   return (
-    <div>Falacias</div>
+    <div>{data.map((F, I) => {return <p>{F.type}</p>})}</div>
   )
 }
 
