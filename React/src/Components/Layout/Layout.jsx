@@ -6,6 +6,7 @@ const Layout = ({children}) => {
   return (
     <div>
         <UL>
+            <li><Link to='/ContextApi'>ContextApi</Link></li>
             <li><Link to='/JuegoDeMesa'>JuegoDeMesa</Link></li>
             <li><Link to='/Falacias'>Falacias</Link></li>
             <li><Link to='/ChuckFacts'>ChuckFacts</Link></li>
