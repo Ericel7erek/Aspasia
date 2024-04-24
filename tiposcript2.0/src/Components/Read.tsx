@@ -1,5 +1,5 @@
 import  { useEffect, useState } from 'react'
-import { getItems } from '../Firebase/api'
+import { getItems, todo } from '../Firebase/api'
 
 
 const Read = () => {
@@ -13,7 +13,7 @@ useEffect(() => {
   }
   return (
     <div>
-        {name.map((name,i) => <p key={i}>{name.id}--{name.userName}</p>)}
+        {name.map((name:todo,i) => <p key={i}>{name.id}--{name.userName}</p>)}
     </div>
   )
 }
