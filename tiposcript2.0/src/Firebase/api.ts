@@ -2,7 +2,7 @@ import { collection, addDoc, db } from "./firebase";
 
 type todo = {
     userName: string;
-    id: string;
+    id: string |null;
 }
 
 const collectionName = 'items';

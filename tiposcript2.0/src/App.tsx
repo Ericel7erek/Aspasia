@@ -1,9 +1,10 @@
+import Write from "./Components/Write"
 
 
 const App = () => {
   return (
     <>
-    
+    <Write/>
     </>
   )
 }

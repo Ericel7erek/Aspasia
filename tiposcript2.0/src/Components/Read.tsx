@@ -1,6 +1,7 @@
-import React from 'react'
+import  { useState } from 'react'
 
 const Read = () => {
+  const [name, setName] = useState<string | null>(null)
   return (
     <div>
         
