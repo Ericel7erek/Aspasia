@@ -1,8 +1,10 @@
-import { collection, addDoc, getDocs, query,db } from "./firebase";
+import { collection, addDoc, getDocs, query,db,doc ,updateDoc, getDoc, deleteDoc } from "./firebase";
+import { type QuerySnapshot } from 'firebase/firestore'
 
 export type todo = {
     userName: string;
-    id?:string;
+    id?:string[];
+    date: string
 }
 
 const collectionName = 'items';
@@ -13,7 +15,10 @@ export const createItem = async(obj:todo):Promise<string> => {
     const data = await addDoc(colRef, obj);
     return data.id!;
 }
-
+export const updateItem = async (id:string , obj:todo) => {
+    const docRef = doc(db, collectionName, id);
+    await updateDoc(docRef, obj)
+}
 // READ
 export const getItems= async ()  => {
     const colRef = collection(db, collectionName);
@@ -21,8 +26,17 @@ export const getItems= async ()  => {
     return getArrayFromCollection(result);
 }
 
-const getArrayFromCollection = (collection:any) => {
-    return collection.docs.map((doc:any) => {
+export const getItemById = async (id:string) => {
+    const docRef = doc(db, collectionName, id);
+    const result = await getDoc(docRef);
+    return result.data();
+}
+export const deleteItem = async (id:string) => {
+    const docRef = doc(db, collectionName, id);
+    await deleteDoc(docRef);
+}
+const getArrayFromCollection = (collection:QuerySnapshot) => {
+    return collection.docs.map((doc) => {
         return { ...doc.data(), id: doc.id };
     });
 }

@@ -1,9 +1,11 @@
 import  { useEffect, useState } from 'react'
 import { getItems, todo } from '../Firebase/api'
+import { Link } from 'react-router-dom'
 
 
 const Read = () => {
-  const [name, setName] = useState([])
+  const [name, setName] = useState<todo[]>([])
+
 useEffect(() => {
   query()
   },[])
@@ -13,7 +15,7 @@ useEffect(() => {
   }
   return (
     <div>
-        {name.map((name:todo,i) => <p key={i}>{name.id}--{name.userName}</p>)}
+        {name.map((name:todo,i:number) => <p key={i}><Link to={`/edit/${name.id}`}>{name.id}</Link>--{name.userName}--{name.date}</p>)}
     </div>
   )
 }
