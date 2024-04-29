@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { deleteItem, getItemById, todo, updateItem } from "../Firebase/api";
-import {  Navigate, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 
 
@@ -10,17 +10,17 @@ const Edit = () => {
         date: ""
     })
     const navigate = useNavigate()
-    const {id} = useParams<string>()
-useEffect(() => {
-  query()
-  },[])
+    const {id= "" } = useParams<string>()
+    useEffect(() => {
+    query()
+    },[])
 
-  const query = () => {
-    getItemById(id).then((data:any)=> setName(data))
-  }
-  console.log(name);
-  
-  return (
+    const query = () => {
+        getItemById(id).then((data:any)=> setName(data))
+    }
+    console.log(name);
+    
+    return (
     <div>
         <input type="text" value={name.userName} onChange={(e)=> setName({...name, userName:e.target.value})}/>
         <input type="date" value={name.date} onChange={(e)=> setName({...name, date:e.target.value})}/> <br />

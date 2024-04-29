@@ -2,27 +2,27 @@ import { collection, addDoc, getDocs, query,db,doc ,updateDoc, getDoc, deleteDoc
 import { type QuerySnapshot } from 'firebase/firestore'
 
 export type todo = {
+    id?:string;
     userName: string;
-    id?:string[];
     date: string
 }
-
 const collectionName = 'items';
 
 // CREATE
 export const createItem = async(obj:todo):Promise<string> => {
     const colRef = collection(db, collectionName);
     const data = await addDoc(colRef, obj);
-    return data.id!;
+    return data.id;
 }
 export const updateItem = async (id:string , obj:todo) => {
     const docRef = doc(db, collectionName, id);
     await updateDoc(docRef, obj)
 }
 // READ
-export const getItems= async ()  => {
+export const getItems= async ():Promise<todo[]> => {
     const colRef = collection(db, collectionName);
     const result = await getDocs(query(colRef));
+    console.log(result)
     return getArrayFromCollection(result);
 }
 
@@ -34,9 +34,10 @@ export const getItemById = async (id:string) => {
 export const deleteItem = async (id:string) => {
     const docRef = doc(db, collectionName, id);
     await deleteDoc(docRef);
+    
 }
 const getArrayFromCollection = (collection:QuerySnapshot) => {
     return collection.docs.map((doc) => {
-        return { ...doc.data(), id: doc.id };
+        return { ...doc.data(), id: doc.id } as todo;
     });
 }
