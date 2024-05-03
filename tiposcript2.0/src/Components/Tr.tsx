@@ -11,6 +11,7 @@ const Tr = ({nam,query}:{nam:any,query:any},) => {
         <tr>
         <td style={{border: '1px solid'}}>
         {/*<Link to={`/edit/${name.id}`}>*/}
+        {console.log(nam.id)}
         {nam.id}
         {/*</Link>*/}
         </td>

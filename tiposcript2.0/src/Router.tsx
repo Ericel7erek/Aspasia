@@ -4,9 +4,12 @@ import Read from './Components/Read'
 import Write from './Components/Write'
 import Layout from './Components/Layout'
 import Edit from './Components/Edit'
-import Nuevo from './Components/Nuevo'
+import Login from './Provider/Login'
+import UserInfo from './Provider/UserInfo'
+import { useUserContext } from './Provider/UserProvider'
 
 const Router = () => {
+  const [user] = useUserContext();
   return (
     <BrowserRouter>
     <Layout>
@@ -14,7 +17,8 @@ const Router = () => {
     <Route path='/' element={<Read/>} />
     <Route path='/Write' element={<Write />} />
     <Route path='/edit/:id' element={<Edit/>} />
-    <Route path='/Nuevo' element={<Nuevo/>} />
+    <Route path='/Login' element={<Login/>} />
+    {user?.id ?(<Route path='/YourTasks' element={<UserInfo/>} />) : (<Route path='/Login' element={<Login/>} />)}
     </Routes>
     </Layout>
     </BrowserRouter>
