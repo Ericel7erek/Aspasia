@@ -9,7 +9,6 @@ const Login = () => {
   const [pass, setPass] = useState("");
   const [user, setUser] = useUserContext();
   const [created, isCreated] = useState(true);
-  // const [userName, setUserName] = useState()
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
