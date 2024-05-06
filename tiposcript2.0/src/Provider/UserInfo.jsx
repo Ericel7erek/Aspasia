@@ -9,7 +9,6 @@ const UserInfo = () => {
   const [txt, setTxt] = useState();
   const [tasks, setTasks] = useState();
   const nav = useNavigate();
-  //   const [Editing, setEditing] = useState(false);
 
   const getTasks = async () =>
     await getUser(user?.uid).then((u) => {
