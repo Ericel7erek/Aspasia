@@ -1,14 +1,8 @@
 import { useEffect, useState } from "react";
 import { useUserContext } from "./UserProvider";
-import {
-  deleteTask,
-  getUser,
-  logout,
-  newTask,
-  updateTask,
-} from "../Firebase/api";
+import { getUser, logout, newTask } from "../Firebase/api";
 import EditPart from "../Components/EditPart";
-import { Route, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const UserInfo = () => {
   const [user, setUser] = useUserContext();
