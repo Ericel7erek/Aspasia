@@ -18,23 +18,13 @@ const Login = () => {
             setUser(user);
         } else {
             console.log("No user logged");
-            setUser(null);
+            setUser(null);  
         }
     })
   }, [])
     return (
         <>
-        {created && 
-        <>
-        <input type="email" onChange={(e)=> setEmail(e.target.value)}/> <br />
-        <input type="password" onChange={(e)=> setPass(e.target.value)}/> <br />
-        <button onClick={()=>{
-            signUp(email,pass)
-            isCreated(!created)
-            }}>Create User</button>
-        </>
-        }
-        {!created && 
+        {user ? 
         <>
         <input type="email" onChange={(e)=> setEmail(e.target.value)}/> <br />
         <input type="password" onChange={(e)=> setPass(e.target.value)}/> <br />
@@ -42,6 +32,15 @@ const Login = () => {
             signIn(email,pass)
             isCreated(!created)
         }}>Sign In</button>
+        </>
+        :
+        <>
+        <input type="email" onChange={(e)=> setEmail(e.target.value)}/> <br />
+        <input type="password" onChange={(e)=> setPass(e.target.value)}/> <br />
+        <button onClick={()=>{
+            signUp(email,pass)
+            isCreated(!created)
+            }}>Create User</button>
         </>
         }
         <br />
