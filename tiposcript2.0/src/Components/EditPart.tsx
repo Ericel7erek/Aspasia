@@ -18,13 +18,13 @@ const EditPart = ({task,getTasks,i}:{task:any, getTasks:any, i:any}) => {
                         onChange={(e) => setTxt(e.target.value)}
                     /> <br />
             <button onClick={async ()=>{
-                await updateTask(user.id,i,txt)
+                await updateTask(user.uid,i,txt)
                 getTasks()
                 setTxt('')
                 }}>Update</button>
                 </>)}
             <button onClick={async ()=>{
-                await deleteTask(user.id,i)
+                await deleteTask(user.uid,i)
                 getTasks()
                 }}>Delete</button>
         

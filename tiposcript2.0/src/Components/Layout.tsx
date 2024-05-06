@@ -9,7 +9,8 @@ const Layout = ({children}:any) => {
                         <li><Link to="/">Read</Link></li>
                         {/* <li><Link to="/Write">Write</Link></li> */}
                         <li><Link to="/Login">Login</Link></li>
-                        {user?.id &&<li><Link to="/YourTasks">Tasks</Link></li>}
+                        {/* <li><Link to="/YourTasks">Tasks</Link></li> */}
+                        {user?.uid &&<li><Link to="/YourTasks">Tasks</Link></li>}
                 </ul>
                 <main>{children}</main>
         </div>

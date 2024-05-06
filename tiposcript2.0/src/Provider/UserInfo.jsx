@@ -8,7 +8,7 @@ const UserInfo = () => {
     const [txt, setTxt] = useState()
     const [tasks, setTasks] = useState();
     const [Editing, setEditing] = useState(false);
-    const getTasks = () => getUser(user?.id).then(u => {
+    const getTasks = () => getUser(user?.uid||user?.id).then(u => {
         u.tasks && setTasks(u.tasks);
     })
     useEffect(()=> {
@@ -16,7 +16,7 @@ const UserInfo = () => {
     },[])
     return (
         <>
-        <p>Hello {user?.userName}, Welcome to your todo List:</p>
+        <p>Hello {user?.email}, Welcome to your todo List:</p>
         
         {tasks &&tasks.map((task,i)=> {
         console.log('3333333',task)
@@ -44,7 +44,8 @@ const UserInfo = () => {
             )}
         <input type="text" value={txt} onChange={(e)=>setTxt(e.target.value)}/>
         <button onClick={async ()=> {
-            await newTask(user?.id, txt)
+            console.log('11111111111', user)
+            await newTask(user?.uid, txt)
             getTasks()
             setTxt('')
         }}>

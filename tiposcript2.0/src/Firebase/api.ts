@@ -1,5 +1,5 @@
-import { collection, addDoc, getDocs, query,db,doc ,updateDoc, getDoc, deleteDoc, where } from "./firebase";
-import { type QuerySnapshot } from 'firebase/firestore'
+import { collection, addDoc, getDocs, query,db,doc ,updateDoc, getDoc, deleteDoc, where, auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, sendEmailVerification, GoogleAuthProvider, signInWithPopup } from "./firebase";
+import { setDoc, type QuerySnapshot } from 'firebase/firestore'
 
 export type todo = {
     id?:string;
@@ -18,21 +18,21 @@ const collectionName = 'items';
 export const newTask = async (id:string, taskText:{
         txt:string
     }[]) => {
-    const result = await getDoc(doc(db, "Users", id));
+    const result = await getDoc(doc(db, "users", id));
     const user = result.data();
     const prevTasks = user?.tasks ? [...user.tasks,taskText] : [ taskText ];
-    await updateDoc(doc(db, "Users", id), { ...user, tasks: prevTasks });
+    await updateDoc(doc(db, "users", id), { ...user, tasks: prevTasks });
 }
 
 export const getUser = async (id:string) => {
     console.log('id', id)
-    const result = await getDoc(doc(db, "Users", id));
+    const result = await getDoc(doc(db, "users", id));
     console.log('result', result.data())
     return result.data();
 }
 
 export const access = async (name?:string) => {
-    const colRef = collection(db, "Users");
+    const colRef = collection(db, "users");
     const result = await getDocs(query(colRef, where('name', '==', name)));
     if (result.size === 0) {
         const a = await addDoc(colRef, { name });
@@ -41,18 +41,18 @@ export const access = async (name?:string) => {
     return result.docs[0].id;
 }
 
-export const deleteTask = async (userId:string, taskPos:string) => {
+export const deleteTask = async (userId:string, taskPos:number) => {
     console.log(userId)
-    const result = await getDoc(doc(db, "Users", userId));
+    const result = await getDoc(doc(db, "users", userId));
     const user = result.data();
     console.log('deleteTask', user)
-    await updateDoc(doc(db, "Users", userId), { ...user, tasks: user?.tasks.filter((t, i) => i !== taskPos) });
+    await updateDoc(doc(db, "users", userId), { ...user, tasks: user?.tasks.filter((t:number, i:number) => i !== taskPos) });
 }
 
 export const updateTask = async (userId:string, taskPos:string, taskText:{
         txt:string
     }[]) => {
-    const result = await getDoc(doc(db, "Users", userId));
+    const result = await getDoc(doc(db, "users", userId));
     const user = result.data();
     console.log('uuuuuuuuuuuuuuuuuu', userId, taskPos, taskText);
     if(user){
@@ -64,7 +64,7 @@ export const updateTask = async (userId:string, taskPos:string, taskText:{
     //         return { ...task, txt: taskText }
     //     }
     // })
-    await updateDoc(doc(db, "Users", userId), user);
+    await updateDoc(doc(db, "users", userId), user);
     }
  
 }
@@ -110,3 +110,38 @@ const getArrayFromCollection = (collection:QuerySnapshot) => {
 }
 // Access 
 
+
+
+export const signUp = async (email:string, password:string) => {
+    try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        sendEmailVerification(userCredential.user);
+        const user = userCredential.user;
+        const docRef = doc(db, 'users', user.uid);
+        await setDoc(docRef, {});
+        return user.uid;
+    } catch (err:any) {
+        return err.message;
+    }
+}
+
+export const signIn = async (email:string, password:string) => {
+    try {
+        const result = await signInWithEmailAndPassword(auth, email, password);
+        return result.user.uid;
+    } catch (err:any) {
+        return err.message;
+    }
+}
+
+export const getCurrentUserId = async () => await auth.currentUser?.uid;
+export const logout = async () => await signOut(auth);
+
+
+
+export const loginWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
+    return signInWithPopup(auth, provider).then(result => {
+        return result.user;
+    });
+}

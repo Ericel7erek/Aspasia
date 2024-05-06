@@ -18,7 +18,8 @@ const Router = () => {
     <Route path='/Write' element={<Write />} />
     <Route path='/edit/:id' element={<Edit/>} />
     <Route path='/Login' element={<Login/>} />
-    {user?.id ?(<Route path='/YourTasks' element={<UserInfo/>} />) : (<Route path='/Login' element={<Login/>} />)}
+    <Route path='/YourTasks' element={<UserInfo/>} />
+    {/* {user?.id ?(<Route path='/YourTasks' element={<UserInfo/>} />) : (<Route path='/Login' element={<Login/>} />)} */}
     </Routes>
     </Layout>
     </BrowserRouter>
