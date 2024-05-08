@@ -1,3 +1,4 @@
+import firebase from "firebase/compat/app";
 import { collection, addDoc, getDocs, query,db,doc ,updateDoc, getDoc, deleteDoc, where, auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, sendEmailVerification, GoogleAuthProvider, signInWithPopup } from "./firebase";
 import { setDoc, type QuerySnapshot } from 'firebase/firestore'
 
@@ -23,6 +24,24 @@ export const newTask = async (id:string, taskText:{
     const prevTasks = user?.tasks ? [...user.tasks,taskText] : [ taskText ];
     await updateDoc(doc(db, "users", id), { ...user, tasks: prevTasks });
 }
+export const newHilo = async (taskText: string) => {
+    // Add the new "hilo" document to the "Hilos" collection
+    await addDoc(collection(db, "Hilos"), {
+        taskText: taskText,
+        // You can add more fields here if needed
+    });
+}
+
+// Function to add a comment to a specific "hilo"
+export const addCommentToHilo = async (hiloId: string, comment: string, userId: string) => {
+    // Get a reference to the specific "hilo" document
+    const hiloRef = doc(db, "Hilos", hiloId);
+    // Update the "comments" array within the "hilo" document
+    await updateDoc(hiloRef, {
+        comments: firebase.firestore.FieldValue.arrayUnion({ comment, userId })
+    });
+}
+
 
 export const getUser = async (id:string) => {
     console.log('id', id)
@@ -31,6 +50,16 @@ export const getUser = async (id:string) => {
     return result.data();
 }
 
+export const getHilos = async () => {
+    // Retrieve all documents from the "Hilos" collection
+    const querySnapshot = await getDocs(collection(db, "Hilos"));
+    // Iterate through the documents and extract data
+    const hilos = querySnapshot.docs.map(doc => ({
+        id: doc.id, // Document ID
+        ...doc.data() // Other data in the document
+    }));
+    return hilos;
+}
 export const access = async (name?:string) => {
     const colRef = collection(db, "users");
     const result = await getDocs(query(colRef, where('name', '==', name)));
