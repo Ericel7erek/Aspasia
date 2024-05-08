@@ -28,9 +28,12 @@ const CreateHilos = () => {
           {hilos &&
             hilos.map((hilo, i) => {
               return (
-                <Link to={`/Hilos/${hilo.id}`} key={i}>
-                  {hilo.taskText}
-                </Link>
+                <div>
+                  <Link to={`/Hilos/${hilo.id}`} key={i}>
+                    {hilo.taskText}
+                  </Link>
+                  <br />
+                </div>
               );
             })}
           <input

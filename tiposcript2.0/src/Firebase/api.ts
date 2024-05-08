@@ -35,7 +35,7 @@ export const newHilo = async (taskText: string) => {
 // Function to add a comment to a specific "hilo"
 export const addCommentToHilo = async (hiloId: string, comment: string, userId: string) => {
     // Get a reference to the specific "hilo" document
-    const hiloRef = doc(db, "Hilos", hiloId);
+    const hiloRef = doc(db, "Hilos", hiloId,"entradas");
     // Update the "comments" array within the "hilo" document
     await updateDoc(hiloRef, {
         comments: firebase.firestore.FieldValue.arrayUnion({ comment, userId })
