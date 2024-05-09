@@ -10,7 +10,7 @@ const CreateHilos = () => {
   const [hilos, setHilos] = useState();
   const nav = useNavigate();
 
-  const getHilo = async () => {
+  const getHilo = () => {
     getHilos().then((u) => {
       u && setHilos(u);
     });

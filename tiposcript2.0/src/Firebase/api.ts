@@ -1,4 +1,4 @@
-import firebase from "firebase/compat/app";
+
 import { collection, addDoc, getDocs, query,db,doc ,updateDoc, getDoc, deleteDoc, where, auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, sendEmailVerification, GoogleAuthProvider, signInWithPopup } from "./firebase";
 import { setDoc, type QuerySnapshot } from 'firebase/firestore'
 
@@ -35,11 +35,11 @@ export const newHilo = async (taskText: string) => {
 // Function to add a comment to a specific "hilo"
 export const addCommentToHilo = async (hiloId: string, comment: string, userId: string) => {
     // Get a reference to the specific "hilo" document
-    const hiloRef = doc(db, "Hilos", hiloId,"entradas");
+    await addDoc(collection(db, "Hilos", hiloId, "comentarios"),{
+        comment,
+        userId
+    })
     // Update the "comments" array within the "hilo" document
-    await updateDoc(hiloRef, {
-        comments: firebase.firestore.FieldValue.arrayUnion({ comment, userId })
-    });
 }
 
 
@@ -111,7 +111,12 @@ export const updateItem = async (id:string , obj:todo) => {
     await updateDoc(docRef, obj)
 }
 // READ
-
+export const getComments= async (hiloID:string):Promise<any[]> => {
+    const colRef = collection(db, "Hilos", hiloID, "comentarios");
+    const result = await getDocs(query(colRef));
+    console.log(result)
+    return getArrayFromCollection(result);
+}
 
 
 export const getItems= async ():Promise<todo[]> => {
