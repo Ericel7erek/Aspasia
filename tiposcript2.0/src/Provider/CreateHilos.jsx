@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useUserContext } from "./UserProvider";
 import { logout, newHilo, getHilos } from "../Firebase/api";
-import EditPart from "../Components/EditPart";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 const CreateHilos = () => {

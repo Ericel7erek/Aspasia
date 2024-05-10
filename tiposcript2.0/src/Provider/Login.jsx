@@ -10,17 +10,6 @@ const Login = () => {
   const [user, setUser] = useUserContext();
   const [created, isCreated] = useState(true);
 
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        console.log("user", user, " userId:", user.uid);
-        setUser(user);
-      } else {
-        console.log("No user logged");
-        setUser(null);
-      }
-    });
-  }, []);
   return (
     <>
       {user ? (
