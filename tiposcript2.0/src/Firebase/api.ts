@@ -1,7 +1,7 @@
 
-import { collection, addDoc, getDocs, query,db,doc ,updateDoc, getDoc, deleteDoc, where, auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, sendEmailVerification, GoogleAuthProvider, signInWithPopup } from "./firebase";
+import { collection, addDoc, getDocs, query,db,doc ,updateDoc, getDoc, deleteDoc, where, auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, sendEmailVerification, GoogleAuthProvider, signInWithPopup, storage } from "./firebase";
 import { setDoc, type QuerySnapshot } from 'firebase/firestore'
-
+import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 export type todo = {
     id?:string;
     userName: string;
@@ -31,13 +31,22 @@ export const newHilo = async (taskText: string) => {
         // You can add more fields here if needed
     });
 }
+export const uploadImage = async (file:any, uid:string) => {
+    const storageRef = ref(storage, `/files/${uid}/${file.name}`);
+    const uploadTask = uploadBytes(storageRef, file);
+    uploadTask.then(async (data) => {
+        const url = await getDownloadURL(data.ref);
+        const colRef = collection(db, "students");
+        await updateDoc(doc(colRef, uid), { uploadedPicture: url });
+    })
+}
 
 // Function to add a comment to a specific "hilo"
 export const addCommentToHilo = async (hiloId: string, comment: string, userId: string) => {
     // Get a reference to the specific "hilo" document
     await addDoc(collection(db, "Hilos", hiloId, "comentarios"),{
         comment,
-        userId
+        userId,
     })
     // Update the "comments" array within the "hilo" document
 }
@@ -152,7 +161,7 @@ export const signUp = async (email:string, password:string) => {
         sendEmailVerification(userCredential.user);
         const user = userCredential.user;
         const docRef = doc(db, 'users', user.uid);
-        await setDoc(docRef, {});
+        await setDoc(docRef, {name: user.displayName});
         return user.uid;
     } catch (err:any) {
         return err.message;

@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { addCommentToHilo, getComments } from "../Firebase/api";
+import { addCommentToHilo, getComments, uploadImage } from "../Firebase/api";
 import { useEffect, useState } from "react";
 import { useUserContext } from "./UserProvider";
 
@@ -8,10 +8,12 @@ const Hilos = () => {
   const [comment, setCommment] = useState(null);
   const [txt, setTxt] = useState();
   const [user] = useUserContext();
+  const [imageId, setImageId] = useState();
   console.log(user);
   const getComm = () => {
     getComments(id.id).then(setTxt);
   };
+  console.log(user);
   useEffect(() => {
     getComm();
   }, []);
@@ -33,7 +35,8 @@ const Hilos = () => {
               fontWeight: "bold",
             }}
           >
-            Comment:{t.comment}-- User:{t.userId}
+            Comment:{t.comment}-- User:{" "}
+            {user.uid === t.userId ? user.displayName : t.userId}
             {/* {t.id} */}
             {console.log("111111111111111", t)}
           </p>
@@ -43,6 +46,7 @@ const Hilos = () => {
         value={comment}
         onChange={(e) => setCommment(e.target.value)}
       />
+
       {console.log(id.id)}
       <button
         onClick={() => {
