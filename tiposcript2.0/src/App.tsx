@@ -18,6 +18,9 @@ const App = () => {
         setUser('nouser');
       }
     });
+      fetch("http://localhost:5000/book/")
+      .then((response) => response.json())
+      .then(console.log);
   }, []);
   return  (
     <>
