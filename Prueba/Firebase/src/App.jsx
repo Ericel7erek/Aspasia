@@ -27,6 +27,7 @@ useEffect(() => {
         setUserName('');
       }
         } >Borrar</button>
+     
     {/* <button onClick={()=> getItems().then(setShow)}>Show</button> */}
     {show.map((item,i)=> <p key={i}>{item.id}--{item.userName}</p>)}
     </>
